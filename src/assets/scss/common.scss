@@ -3,6 +3,8 @@
 @import 'layout.scss';
 @import 'contents.scss';
 @import 'general.scss';
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+@import '../../../node_modules/bootstrap-vue/src/index.scss';
 
 body{
   font-size:map-get($font_size, font_14);
