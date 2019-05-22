@@ -3,10 +3,10 @@
     <!-- wrap -->
     <div id="wrap">
       <!-- container -->
-      <div id="container" class="mediaquery">
+      <div id="container" class="mediaquery gray_bg">
         <div id="header" class="custom_bg fixed" >
             <div class="header_card">
-              <button type="button" class="btn only prev" @click="goPrePage"><span class="ico prev_wh">이전</span></button>
+              <button type="button" class="btn1 only prev" @click="goBack"><span class="ico prev_wh">이전</span></button>
               <p class="header_text font_20">작업요청서</p>
             </div>
         </div>
@@ -56,24 +56,13 @@ export default {
         {title: '익스프레스 선릉점 작업요청', year: 2019, month: 3, day: 20},
         {title: '익스프레스 여의도점 작업요청', year: 2019, month: 3, day: 12},
         {title: '익스프레스 부천점 작업요청', year: 2019, month: 3, day: 12}
-      ],
-      items: [
-          { id: 1, first_name: 'Fred', last_name: 'Flintstone' },
-          { id: 2, first_name: 'Wilma', last_name: 'Flintstone' },
-          { id: 3, first_name: 'Barney', last_name: 'Rubble' },
-          { id: 4, first_name: 'Betty', last_name: 'Rubble' },
-          { id: 5, first_name: 'Pebbles', last_name: 'Flintstone' },
-          { id: 6, first_name: 'Bamm Bamm', last_name: 'Rubble' },
-          { id: 7, first_name: 'The Great', last_name: 'Gazzoo' },
-          { id: 8, first_name: 'Mr', last_name: 'Slate' },
-          { id: 9, first_name: 'Pearl', last_name: 'Slaghoople' }
-        ]
+      ]
     }
   },
   computed: {
-    rows() {
-      return this.items.length
-    }
+    // rows() {
+    //   return this.items.length
+    // }
   }
 }
 </script>

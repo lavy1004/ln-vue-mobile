@@ -87,8 +87,8 @@ button.disable {color:map-get($mono_colors, mono_25);}
 .bbB85 {border-bottom: 1px solid map-get($line_colors , B85) !important;}
 .bbB60 {border-bottom: 1px solid map-get($line_colors , B60)}
 
-// .gray_bg {background-color: map-get($bg_colors , BG_1);}
 .custom_bg{background-color:map-get($bg_colors, BG_1);}
+.gray_bg {background-color: #ececec;}
 .white_bg {background-color: #fff}
 
 

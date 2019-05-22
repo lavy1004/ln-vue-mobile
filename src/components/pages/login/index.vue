@@ -7,7 +7,7 @@
         <div id="content" class="normal">
           <div class="cell">
             <div class="inner">
-                <div class="card mt100">
+                <div class="lo-card mt100">
                     <figure class="card-fig">
                         <img src="@/assets/img/web-logo.png" alt="">
                     </figure>

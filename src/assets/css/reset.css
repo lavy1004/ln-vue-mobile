@@ -71,3 +71,5 @@ a:active {background-color:transparent;}
 
 caption, legend, hr {overflow:hidden; width:0; height:0; font-size:0; line-height:0;}
 address,caption,cite,code,dfn,em,var {font-style:normal; font-weight:normal;}
+
+p{margin-bottom: 0 !important;}

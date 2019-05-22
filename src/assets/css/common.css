@@ -2,7 +2,7 @@
 
 
 /*헤더*/ 
-#header .btn.prev .ico{width:28px; height:28px;display:block;background-position: left;}
+#header .btn1.prev .ico{width:28px; height:28px;display:block;background-position: left;}
 
 
 .ico.prev_wh{ font-size: 0;vertical-align: middle;background: url(../img/ico/prev_wh.png) no-repeat left top;}

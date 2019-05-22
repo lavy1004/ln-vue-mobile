@@ -2,7 +2,7 @@
 
 #container.mediaquery{
     padding:0;
-    min-height:calc(100vh - 14px);
+    min-height:calc(100vh);
     position: relative;
 
     &.login{
@@ -35,7 +35,7 @@
         padding-left:24px;
         padding-right:24px;
       }
-      .btn.prev , .btn.close{
+      .btn1.prev , .btn1.close{
         width:auto;
         position: absolute;
       }
@@ -88,6 +88,8 @@
         }
       }
       & #content{
+        height: 100vh;
+        background: white;
         //리스트형
         &.list{
           width:calc(100% - #{$l_padding}*2);
@@ -107,34 +109,34 @@
     }
   }
   
-  @media only screen and (min-width:768px) and (max-width:1023px){ //최소768부터~최대1023까지 일때 적용 min-width 768보다 큰 브라우저 넓이에 적용되며 max-width 1023보다 작은브라우저 너비에 적용됩니다
-    $l_padding: 18px;
-    $c_padding: 74px;
-    #container.mediaquery{ 
-      & #header{
-        .header_card{
-          background-color:transparent;
-          border-radius: 0;
-          border:1px solid blue;
-          position: relative;
-          width: 620px;
+  // @media only screen and (min-width:768px) and (max-width:1023px){ //최소768부터~최대1023까지 일때 적용 min-width 768보다 큰 브라우저 넓이에 적용되며 max-width 1023보다 작은브라우저 너비에 적용됩니다
+  //   $l_padding: 18px;
+  //   $c_padding: 74px;
+  //   #container.mediaquery{ 
+  //     & #header{
+  //       .header_card{
+  //         background-color:transparent;
+  //         border-radius: 0;
+  //         border:1px solid blue;
+  //         position: relative;
+  //         width: 620px;
           
-        }
-      }     
-      & #content{
-        //리스트형
-        &.list{
-          width:calc(100% - #{$l_padding}*2);
-          .inner{}
-        }
-        //일반형
-        &.normal{
-          width:620px;
-          .cell{            
-            .inner{}
-          }
-          &~.fixBtmBtn.abs{width:620px;left:50%;transform:translateX(-50%)}
-        }
-      }
-    }
-  }
+  //       }
+  //     }     
+  //     & #content{
+  //       //리스트형
+  //       &.list{
+  //         width:calc(100% - #{$l_padding}*2);
+  //         .inner{}
+  //       }
+  //       //일반형
+  //       &.normal{
+  //         width:620px;
+  //         .cell{            
+  //           .inner{}
+  //         }
+  //         &~.fixBtmBtn.abs{width:620px;left:50%;transform:translateX(-50%)}
+  //       }
+  //     }
+  //   }
+  // }
