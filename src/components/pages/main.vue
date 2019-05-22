@@ -1,0 +1,40 @@
+<template>
+  <!-- eslint-disable -->
+    <!-- wrap -->
+    <div id="wrap">
+      <!-- container -->
+      <div id="container" class="mediaquery main">
+        <div id="header" class="custom_bg">
+            <p class="header_text font_20">관리자페이지</p>
+        </div>
+        <div id="content" class="normal">
+          <div class="cell">
+            <div class="inner">
+                <div class="card mt50">
+                    <div class="box type1">
+                      <p class="h1-tit">작업요청서</p>
+                      <p class="detail-txt">자세히보기</p>
+                    </div>
+                    <div class="box type2">
+                      <p class="h1-tit">문의사항</p>
+                      <p class="detail-txt">자세히보기</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //container -->
+    </div>
+    <!-- //wrap -->
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+
+</style>

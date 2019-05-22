@@ -1,0 +1,90 @@
+@charset "utf-8";
+
+@import 'layout.scss';
+@import 'contents.scss';
+@import 'general.scss';
+
+body{
+  font-size:map-get($font_size, font_14);
+}
+input, textarea, label, button {
+  font-size:map-get($font_size, font_14);
+  caret-color:map-get($bg_colors, BG_1);
+}
+
+
+button.btn{
+  width:100%;
+  
+  &.clr1 , &.clr2 ,&.clr3 ,&.clr4{
+    color: #ffffff;
+    border: 0;
+  }
+
+  & .ico{
+    margin-right:4px;
+  }
+
+}
+
+button.disable {color:map-get($mono_colors, mono_25);} 
+// ::-webkit-scrollbar{display:none;}
+
+// 글자 폰트에 따른 클래스명 관리
+.font_10{font-size:map-get($font_size, font_10) !important;}
+.font_11{font-size:map-get($font_size, font_11) !important;}
+.font_12{font-size:map-get($font_size, font_12) !important;}
+.font_13{font-size:map-get($font_size, font_13) !important;}
+.font_14{font-size:map-get($font_size, font_14) !important;}
+.font_15{font-size:map-get($font_size, font_15) !important;}
+.font_16{font-size:map-get($font_size, font_16) !important;}
+.font_17{font-size:map-get($font_size, font_17) !important;}
+.font_18{font-size:map-get($font_size, font_18) !important;}
+.font_19{font-size:map-get($font_size, font_19) !important;}
+.font_20{font-size:map-get($font_size, font_20) !important;}
+.font_22{font-size:map-get($font_size, font_22) !important;}
+.font_26{font-size:map-get($font_size, font_26) !important;}
+.font_28{font-size:map-get($font_size, font_28) !important;}
+.font_30{font-size:map-get($font_size, font_30) !important;}
+.font_32{font-size:map-get($font_size, font_32) !important;}
+.font_34{font-size:map-get($font_size, font_34) !important;}
+.font_40{font-size:map-get($font_size, font_40) !important;}
+
+.color_black{color:rgba(0,0,0,1) !important;}
+.color_black80{color:rgba(0,0,0,0.80) !important;}
+.color_black65{color:rgba(0,0,0,0.65) !important;}
+
+
+.clear{clear:both;}
+.block{display:block !important}
+
+.mono_100 {color: map-get($mono_colors, mono_100) !important;}
+.mono_80 {color: map-get($mono_colors, mono_80) !important;}
+.mono_65 {color: map-get($mono_colors, mono_65) !important;}
+.mono_50 {color: map-get($mono_colors, mono_50) !important;}
+.mono_40 {color: map-get($mono_colors, mono_40) !important;}
+.mono_25 {color: map-get($mono_colors, mono_25) !important;}
+.mono_0  {color: map-get($mono_colors, mono_0)  !important;}
+
+.width_inherit {width: inherit !important;}
+.width100 {width:100% !important;}
+.width50 {width:50% !important;}
+
+.color_danger{color: map-get($static_colors , danger);}
+.color_primary{color: map-get($static_colors , primary);}
+.color_star{color: map-get($static_colors , star);}
+.color_alert{color: map-get($static_colors , alert);}
+
+.o2{opacity: 0.2;}
+.o4{opacity: 0.4;}
+.o6{opacity: 0.6;}
+
+.btB89 {border-top: 1px solid map-get($line_colors , B89);}
+.bbB89 {border-bottom: 1px solid map-get($line_colors , B89);}
+.brB89 {border-right: 1px solid map-get($line_colors , B89);}
+.bbB85 {border-bottom: 1px solid map-get($line_colors , B85) !important;}
+.bbB60 {border-bottom: 1px solid map-get($line_colors , B60)}
+
+// .gray_bg {background-color: map-get($bg_colors , BG_1);}
+.custom_bg{background-color:map-get($bg_colors, BG_1);}
+.white_bg {background-color: #fff}
