@@ -72,3 +72,13 @@
         margin-top:24px;
     }
 }
+
+/* workList */
+.card{
+    &.head{
+        background-color:transparent;
+        border-radius: 0;
+        border:1px solid black;
+        position: relative;
+    }
+}

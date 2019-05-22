@@ -10,7 +10,7 @@
         <div id="content" class="normal">
           <div class="cell">
             <div class="inner">
-                <div class="card mt50">
+                <div class="card">
                     <div class="box type1">
                       <p class="h1-tit">작업요청서</p>
                       <p class="detail-txt">자세히보기</p>

@@ -88,3 +88,8 @@ button.disable {color:map-get($mono_colors, mono_25);}
 // .gray_bg {background-color: map-get($bg_colors , BG_1);}
 .custom_bg{background-color:map-get($bg_colors, BG_1);}
 .white_bg {background-color: #fff}
+
+
+/*ul Type*/
+
+.ulList.type1 li{padding:24px; border-bottom:1px solid #b4b4b4;}
