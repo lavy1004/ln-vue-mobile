@@ -7,9 +7,11 @@ import '@/assets/css/css.css'
 import '@/assets/scss/common.scss'
 import BootstrapVue from 'bootstrap-vue'
 import CommonMethodMixin from './mixin/CommonMethodMixin'
+import lnui from '@/components/component'
 
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
+Vue.use(lnui)
 Vue.mixin(CommonMethodMixin)
 
 /* eslint-disable no-new */

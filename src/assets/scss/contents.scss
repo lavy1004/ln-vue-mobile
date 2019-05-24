@@ -6,6 +6,7 @@
     background-color:white; 
     border-radius:8px ;
     padding: 24px;
+    margin-top:100px;
     .inp01{ 
         width: 100%;
         border-radius: 10px;
@@ -15,13 +16,6 @@
     .card-fig{
         display: flex;
         justify-content: center;
-    }
-    .btn01{
-        width: 100%; 
-        color:white;
-        padding:16px;
-        text-align: center;
-        border-radius: 4px;
     }
 }
 
@@ -39,34 +33,28 @@
         &:hover{
             cursor: pointer;
         }
+        .h1-tit{
+            font-size:map-get($font-size, font_28 );
+            color:white;
+            font-weight: 600;
+        }
+        .detail-txt{
+            font-size:map-get($font-size, font_14 );
+            color:white;
+        }
     }
     
     .type1{
         background-color:map-get($bg_colors, BG_2);
         background-image: url(../img/ic-list.png);
         background-repeat: no-repeat;
-        .h1-tit{
-            font-size:map-get($font-size, font_28 );
-            color:white;
-        }
-        .detail-txt{
-            font-size:map-get($font-size, font_14 );
-            color:white;
-        }
+        
     }
     
     .type2{
         background-color:map-get($bg_colors, BG_1);
         background-image: url(../img/ic-chat.png);
         background-repeat: no-repeat;
-        .h1-tit{
-            font-size:map-get($font-size, font_28 );
-            color:white;
-        }
-        .detail-txt{
-            font-size:map-get($font-size, font_14 );
-            color:white;
-        }
     }
     .box + .box{
         margin-top:24px;
@@ -74,3 +62,19 @@
 }
 
 /* workList */
+.ulList.type1 li{
+    position: relative;
+    .act{
+        color:map-get($contents_colors, type_1 )
+    }
+    .finish-st{
+        border:1px solid map-get($com_colors, B40 );
+        color:map-get($com_colors, B40 );
+        padding: 7px 10px;
+        position: absolute;
+        top: calc(50% - 19px);
+        right: 16px;
+        border-radius: 4px;
+        font-weight: bold;
+    }
+}

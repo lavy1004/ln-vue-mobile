@@ -42,7 +42,7 @@ $static_colors: (
 
 // Contents Color
 $contents_colors: (
-  type_1: #ff726D,
+  type_1: #f3384f,
   type_2: #00b6e8,
   type_3: #32667d,
   type_4: #ffba00,
@@ -72,11 +72,18 @@ $line_colors: (
   B80: #CCCCCC,
   B60: #999999,
   B10: #1A1A1A,
-  B95: #F2F2F2
+  B95: #F2F2F2,
 );
 
 // BG 컬러
 $bg_colors: (
   BG_1: #3763e0,
   BG_2: #edbd24,
+  BG_3: #f7f7f7
+);
+
+// common 컬러
+
+$com_colors: (
+  B40: #b4b4b4
 );

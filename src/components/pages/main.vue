@@ -11,7 +11,7 @@
           <div class="cell">
             <div class="inner">
                 <div class="ma-card">
-                    <div class="box type1" @click="goNext(workList)">
+                    <div class="box type1" @click="goNext('workList')">
                       <p class="h1-tit">작업요청서</p>
                       <p class="detail-txt">자세히보기</p>
                     </div>
@@ -31,6 +31,7 @@
 
 <script>
 export default {
+  name: 'main',
   methods: {
     goNext (name) {
       this.$router.push({'name': name.toString()})

@@ -7,14 +7,14 @@
         <div id="content" class="normal">
           <div class="cell">
             <div class="inner">
-                <div class="lo-card mt100">
+                <div class="lo-card">
                     <figure class="card-fig">
                         <img src="@/assets/img/web-logo.png" alt="">
                     </figure>
                     <form action="">
                     <input class="inp01 mt62" type="text" placeholder="아이디">
                     <input class="inp01 mt24" type="password" placeholder="비밀번호">
-                    <button class="btn01 mt62 custom_bg">로그인</button>
+                    <button class="mu-btn mt62 custom_bg" @click="goNext('Main')">로그인</button>
                     </form>
                 </div>
             </div>
@@ -42,6 +42,9 @@ export default {
     }
   },
   methods: {
+    goNext (name) {
+      this.$router.push({'name': name.toString()})
+    },
     handleLogin() {
       console.log('========login=======')
       console.log(this.loginForm)
@@ -53,7 +56,6 @@ export default {
 
         console.log('====res====')
         Cookies.set('tocke', res.data.resData.userId, {expires:1})
-        this.$router.push('/')
       })
       .catch(err => {
         console.log(err)

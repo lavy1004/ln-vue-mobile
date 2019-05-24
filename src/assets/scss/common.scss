@@ -14,6 +14,21 @@ input, textarea, label, button {
   caret-color:map-get($bg_colors, BG_1);
 }
 
+.mu-btn{
+    width: 100%; 
+    color:white;
+    padding:16px;
+    text-align: center;
+    border-radius: 4px;
+    font-size:map-get($font-size, font_16);
+    font-weight: 600;
+    height:56px;
+    background-color:map-get($bg_colors, BG_1);
+    &:hover{
+        opacity:0.5;
+        font-size:map-get($font-size, font_12);
+    }
+}
 
 button.btn{
   width:100%;
@@ -72,6 +87,8 @@ button.disable {color:map-get($mono_colors, mono_25);}
 .width100 {width:100% !important;}
 .width50 {width:50% !important;}
 
+.height100{height:100% !important;}
+
 .color_danger{color: map-get($static_colors , danger);}
 .color_primary{color: map-get($static_colors , primary);}
 .color_star{color: map-get($static_colors , star);}
@@ -94,4 +111,5 @@ button.disable {color:map-get($mono_colors, mono_25);}
 
 /*ul Type*/
 
-.ulList.type1 li{padding:24px; border-bottom:1px solid #b4b4b4;}
+.ulList.type1 li div{padding: 24px 16px; border-bottom:1px solid map-get($com_colors, B40 );}
+.ulList.type1 li div.finish{background-color:map-get($bg_colors, BG_3 ); color:map-get($com_colors, B40 )}
