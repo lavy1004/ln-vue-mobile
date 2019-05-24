@@ -15,7 +15,7 @@
                       <p class="h1-tit">작업요청서</p>
                       <p class="detail-txt">자세히보기</p>
                     </div>
-                    <div class="box type2" @click="goNext(workList)">
+                    <div class="box type2" @click="goNext('qnaList')">
                       <p class="h1-tit">문의사항</p>
                       <p class="detail-txt">자세히보기</p>
                     </div>

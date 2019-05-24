@@ -58,7 +58,7 @@ blockquote:before, blockquote:after, q:before, q:after {content:''; content:none
 input, textarea, label, button {color:rgba(0,0,0,0.8); vertical-align:middle; border-radius: 0; font-family: 'Roboto','Noto Sans CJK KR'; outline: none; -webkit-appearance: none; -moz-appearance: none;}
 option{ font-family: 'Roboto','Noto Sans CJK KR'}
 button,label {cursor:pointer; background:none; border:none;}
-button {border:none; background-color:transparent; }
+button {outline:none!important;border:none; background-color:transparent; }
 i {font-style:normal; vertical-align: middle;}
 table {width:100%; border-collapse:collapse; border-spacing:0; empty-cells:show;}
 textarea {-webkit-appearance:none; border-radius:0; resize:none;}
@@ -71,5 +71,3 @@ a:active {background-color:transparent;}
 
 caption, legend, hr {overflow:hidden; width:0; height:0; font-size:0; line-height:0;}
 address,caption,cite,code,dfn,em,var {font-style:normal; font-weight:normal;}
-
-p{margin-bottom: 0 !important;}

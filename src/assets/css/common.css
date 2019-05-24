@@ -1,18 +1,29 @@
 @charset "utf-8";
 
 
-/*헤더*/ 
+/*헤더 ico*/ 
 #header .btn1.prev .ico{width:28px; height:28px;display:block;background-position: left;}
-
-
+#header .btn1.end .ico{width:28px; height:28px;display:block;}
 .ico.prev_wh{ font-size: 0;vertical-align: middle;background: url(../img/ico/prev_wh.png) no-repeat left top;}
+.ico.down{ font-size: 0;vertical-align: middle;background: url(../img/ico/ic-download.png) no-repeat center;}
+
+
+.mb12{margin-bottom:12px;}
 
 .mt24{margin-top: 24px;}
 .mt50{margin-top: 50px;}
 .mt62{margin-top: 62px;}
 .mt100{margin-top: 100px;}
 
+.fwb400{font-weight: 400;}
+.fwb500{font-weight: 500;}
 .fwb600{font-weight: 600;}
+
+.fr{float: right;}
+.fl{float: left;}
 
 .c-flex{display: flex;justify-content: center;}
 .radi-0{border-radius:0 !important;}
+.hr{border-bottom:1px solid #b4b4b4; margin:24px 0;}
+
+.cur{cursor: pointer;}

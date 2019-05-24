@@ -98,18 +98,20 @@ button.disable {color:map-get($mono_colors, mono_25);}
 .o4{opacity: 0.4;}
 .o6{opacity: 0.6;}
 
-.btB89 {border-top: 1px solid map-get($line_colors , B89);}
-.bbB89 {border-bottom: 1px solid map-get($line_colors , B89);}
-.brB89 {border-right: 1px solid map-get($line_colors , B89);}
-.bbB85 {border-bottom: 1px solid map-get($line_colors , B85) !important;}
-.bbB60 {border-bottom: 1px solid map-get($line_colors , B60)}
+
+/*custom*/
+.custom_clr{color:map-get($contents_colors, type_1)}
 
 .custom_bg{background-color:map-get($bg_colors, BG_1);}
-.gray_bg {background-color: #ececec;}
+.com_bg {background-color: map-get($com_colors, BEC);}
+.gray_bg {background-color: map-get($com_colors, B40);}
 .white_bg {background-color: #fff}
 
 
 /*ul Type*/
 
-.ulList.type1 li div{padding: 24px 16px; border-bottom:1px solid map-get($com_colors, B40 );}
-.ulList.type1 li div.finish{background-color:map-get($bg_colors, BG_3 ); color:map-get($com_colors, B40 )}
+.ulList.type1 li {padding: 24px 16px; border-bottom:1px solid map-get($com_colors, B40 );}
+.ulList.type1 li.finish{background-color:map-get($bg_colors, BG_3 ); color:map-get($com_colors, B40 )}
+
+.ulList.type2 li {padding: 24px 48px;}
+.ulList.type2 li div p span.mono_96{color:map-get($mono_colors, mono_96);}

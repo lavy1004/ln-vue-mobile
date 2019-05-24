@@ -65,7 +65,7 @@
 .ulList.type1 li{
     position: relative;
     .act{
-        color:map-get($contents_colors, type_1 )
+        color:map-get($contents_colors, type_2 )
     }
     .finish-st{
         border:1px solid map-get($com_colors, B40 );

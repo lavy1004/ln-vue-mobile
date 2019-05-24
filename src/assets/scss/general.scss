@@ -42,37 +42,18 @@ $static_colors: (
 
 // Contents Color
 $contents_colors: (
-  type_1: #f3384f,
-  type_2: #00b6e8,
-  type_3: #32667d,
-  type_4: #ffba00,
-  type_5: #00b3c4
+  type_1: #3763e0, //f3384f
+  type_2: #f3384f, //#00b6e8
+  // type_3: #32667d,
+  // type_4: #ffba00,
+  // type_5: #00b3c4
 );
 
 
 // 모노 컬러 
 // ( 텍스트와 배경, 라인 등 컨텐츠 및 UI 전반에 활용되는 고정 컬러(모바일 기준)
 $mono_colors: (
-  mono_100: #000000,
-  mono_80: rgba(#000000, 0.8),
-  mono_65: rgba(#000000, 0.65),
-  mono_50: rgba(#000000, 0.5),
-  mono_40: rgba(#000000, 0.4),
-  mono_25: rgba(#000000, 0.25),
-  mono_0: #ffffff
-);
-
-// 라인컬러 
-// ( 단독리스트일땐 B89 사용, 계층관계가있는 리스트일땐 B92/B85 세트로사용 , 콘텐츠 내 Index 아래 라인은 B60사용 )
-// Section을 구분할 때 8dp, B95사용
-$line_colors: (
-  B92: #EAEAEA,
-  B89: #E3E3E3,
-  B85: #D9D9D9,
-  B80: #CCCCCC,
-  B60: #999999,
-  B10: #1A1A1A,
-  B95: #F2F2F2,
+  mono_96: #969696
 );
 
 // BG 컬러
@@ -83,7 +64,7 @@ $bg_colors: (
 );
 
 // common 컬러
-
 $com_colors: (
-  B40: #b4b4b4
+  B40: #b4b4b4,
+  BEC: #ececec
 );

@@ -38,6 +38,7 @@
       .btn1.prev , .btn1.close{
         width:auto;
         position: absolute;
+        outline: none;
       }
       & p.header_text{
         text-align: center;
@@ -49,9 +50,16 @@
         font-weight: 600;
         flex:1;
       }
-      & .end{
-        font-weight:400;
-        & .end_btn1{margin-right:14px;}
+      .btn1.end{
+        width: auto;
+        position: absolute;
+        top: -6px;
+        right: 16px;
+        background: white;
+        border-radius: 50px;
+        padding: 6px;
+        box-shadow: 3px 3px 5px #000;
+        outline: none;
       }
     }
     

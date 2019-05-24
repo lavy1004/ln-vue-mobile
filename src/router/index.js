@@ -7,6 +7,8 @@ import Main from '@/components/pages/main'
 import WorkList from '@/components/pages/work/workList'
 import WorkDetail from '@/components/pages/work/workDetail'
 
+import QnaList from '@/components/pages/qna/qnaList'
+
 Vue.use(Router)
 
 export default new Router({
@@ -47,6 +49,14 @@ export default new Router({
         authorized: false
       },
       component: WorkDetail
+    },
+    {
+      path: '/qna',
+      name: 'qnaList',
+      meta: {
+        authorized: false
+      },
+      component: QnaList
     }
   ]
 })
