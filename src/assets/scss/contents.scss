@@ -78,3 +78,18 @@
         font-weight: bold;
     }
 }
+
+/*workdetail*/
+.btn1{
+    &.cir{
+        top: -6px;
+        right: 16px;
+        background: white;
+        border-radius: 50px;
+        padding: 6px;
+        box-shadow: 3px 3px 5px #333;
+        outline: none;
+    }
+}
+
+/* qna */

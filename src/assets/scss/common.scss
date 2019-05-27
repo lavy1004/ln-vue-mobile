@@ -110,8 +110,10 @@ button.disable {color:map-get($mono_colors, mono_25);}
 
 /*ul Type*/
 
-.ulList.type1 li {padding: 24px 16px; border-bottom:1px solid map-get($com_colors, B40 );}
+.ulList.type1 li {padding: 20px 16px; border-bottom:1px solid map-get($com_colors, B40 );}
 .ulList.type1 li.finish{background-color:map-get($bg_colors, BG_3 ); color:map-get($com_colors, B40 )}
+.ulList.type1 li.end-qna{color:map-get($com_colors, B40 )}
 
-.ulList.type2 li {padding: 24px 48px;}
+.ulList.type2 li {padding: 20px 48px;}
+.ulList.type2 li.pd-qna {padding: 24px 16px 90px;}
 .ulList.type2 li div p span.mono_96{color:map-get($mono_colors, mono_96);}

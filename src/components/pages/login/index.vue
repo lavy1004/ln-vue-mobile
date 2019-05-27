@@ -30,6 +30,7 @@
 /* eslint-disable */
 import Cookies from 'js-cookie'
 import axios from 'axios'
+
 export default {
   
   name: 'Login',

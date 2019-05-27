@@ -15,25 +15,25 @@
             <div class="inner fixed_pd white_bg height100">
                 <div>
                     <ul class="ulList type1" >
-                      <li  v-for="(item, index) in wList" :key="index" :class="{ 'finish' : item.result }">
+                      <li class="pb90" v-for="(item, index) in qList" :key="index" :class="{ 'end-qna' : item.result }">
                         <!-- Result가 false 라면 클릭안되는 리스트-->
-                        <div v-if="item.result" >
-                          <p class="font_16 fwb600" :class="{ 'act' : item.active }">{{item.title}}</p>
+                        <div v-if="!item.result" class="cur"   >
                           <p>
-                            <span>{{item.year}}</span>년
-                            <span>{{item.month}}</span>월
-                            <span>{{item.day}}</span>일
+                            <span class="font_16 fw600" @click="goNext('qnaDetail')">{{item.title}}</span>
+                            <span class="fr font_12">{{item.date}}</span>
                           </p>
-                          <span v-show="item.result" class="finish-st">작업완료</span>
                         </div>
-                        <div v-else class="cur" @click="goNext('workDetail')">
-                          <p class="font_16 fwb600" :class="{ 'act' : item.active }">{{item.title}}</p>
-                          <p>
-                            <span>{{item.year}}</span>년
-                            <span>{{item.month}}</span>월
-                            <span>{{item.day}}</span>일
+                        <div v-else class="cur" >
+                          <p v-if="item.qatype == 0">
+                            <span class="font_16 fw600" @click="goNext('qnaDetail')">{{item.title}}</span>
+                            <span class="fr font_12">{{item.date}}</span>
                           </p>
-                          <span v-show="item.result" class="finish-st">작업완료</span>
+                          <p v-if="item.qatype > 0" class="pl18">
+                            <span><img src="@/assets/img/ico/ic-arrow.png" alt=""></span>
+                            <span><img src="@/assets/img/ico/ic-reply.png" alt=""></span>
+                            <span class="font_16">답변완료</span>
+                            <span class="fr font_12">{{item.date}}</span>
+                          </p>
                         </div>
                       </li>
                     </ul>
@@ -49,7 +49,33 @@
 
 <script>
 export default {
+  data () {
+    return {
+      qList: [
+        {title: '강남점, 작업관련 문의', date: '2019. 04. 08', result: false, qatype: 0},
+        {title: '역삼점, 견적관련 문의', date: '2019. 04. 08', result: false, qatype: 0},
+        {title: '선릉점, 기타 문의', date: '2019. 04. 08', result: true, qatype: 0}, // 0이면 질문이고 qatype 1부터는 답변의갯수 질문에 id 값도 있으면 더좋다 연계하기위해
+        {title: '답변1', date: '2019. 04. 08', result: true, qatype: 1},
+        {title: '여의도점, 작업관련 문의', date: '2019. 04. 08', result: true, qatype: 0},
+        {title: '답변2, 기타 문의', date: '2019. 04. 08', result: true, qatype: 1}
+      ]
+    }
+  },
+  methods: {
+    goNext (name) {
+      this.$router.push({'name': name.toString()})
+    }
+  }
+  // created () {
+  //   this.$store.commit('qList', true)
+  //   var param = {
+  //     'store_id': this.$route.params.store_id,
+  //     'table_id': this.$route.params.table_id
+  //   }
 
+  //   this.$store.dispatch('', param).then((res) => {
+  //   })
+  // }
 }
 </script>
 

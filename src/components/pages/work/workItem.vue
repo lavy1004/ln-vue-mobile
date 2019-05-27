@@ -5,7 +5,7 @@
                 <div>
                     <p class="font_14 mb12">
                         <span class="mono_96">작업일</span>
-                        <span class="fr fwb600 custom_clr">
+                        <span class="fr fw600 custom_clr">
                             <span class="">{{item.order_time}}</span>
                         </span>
                     </p>
@@ -13,7 +13,7 @@
                         <span class="mono_96">점포</span>
                         <span class="fr ">
                             <span>익스프레스</span>
-                            <span class="fwb600">{{item.store_name}}</span>
+                            <span class="fw600">{{item.store_name}}</span>
                         </span>
                     </p>
                 </div>
@@ -21,15 +21,15 @@
                 <div>
                     <p class="font_14 mb12">
                         <span class="mono_96">성함</span>
-                        <span class="fr fwb600">{{item.name}}</span>
+                        <span class="fr fw600">{{item.name}}</span>
                     </p>
                     <p class="font_14 mb12">
                         <span class="mono_96">직급</span>
-                        <span class="fr fwb600">{{item.position}}</span>
+                        <span class="fr fw600">{{item.position}}</span>
                     </p>
                     <p class="font_14">
                         <span class="mono_96">연락처</span>
-                        <span class="fr fwb600">{{item.mobile}}</span>
+                        <span class="fr fw600">{{item.mobile}}</span>
                     </p>
                 </div>
             </li>

@@ -18,7 +18,7 @@
                       <li  v-for="(item, index) in wList" :key="index" :class="{ 'finish' : item.result }">
                         <!-- Result가 false 라면 클릭안되는 리스트-->
                         <div v-if="item.result" >
-                          <p class="font_16 fwb600" :class="{ 'act' : item.active }">{{item.title}}</p>
+                          <p class="font_16 fw600" :class="{ 'act' : item.active }">{{item.title}}</p>
                           <p>
                             <span>{{item.year}}</span>년
                             <span>{{item.month}}</span>월
@@ -26,8 +26,8 @@
                           </p>
                           <span v-show="item.result" class="finish-st">작업완료</span>
                         </div>
-                        <div v-else class="cur" @click="goNext('workDetail')">
-                          <p class="font_16 fwb600" :class="{ 'act' : item.active }">{{item.title}}</p>
+                        <div v-else class="cur">
+                          <p class="font_16 fw600" :class="{ 'act' : item.active }"  @click="goNext('workDetail')">{{item.title}}</p>
                           <p>
                             <span>{{item.year}}</span>년
                             <span>{{item.month}}</span>월
