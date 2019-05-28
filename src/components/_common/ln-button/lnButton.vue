@@ -5,7 +5,7 @@
     class="mu-btn"
     type="button"
     @click="onClick">{{ title }}
-    <slot name=""/>
+    <slot />
   </button>
 </template>
 

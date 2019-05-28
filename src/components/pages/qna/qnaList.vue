@@ -10,12 +10,12 @@
               <p class="header_text font_20">문의사항</p>
             </div>
         </div>
-        <div id="content" class="normal">
+        <div id="content" class="list white_bg">
           <div class="cell">
-            <div class="inner fixed_pd white_bg height100">
+            <div class="inner fixed_pd white_bg">
                 <div>
                     <ul class="ulList type1" >
-                      <li class="pb90" v-for="(item, index) in qList" :key="index" :class="{ 'end-qna' : item.result }">
+                      <li class="pb90" v-for="(item, index) in qList" :propdata="qList" :key="index" :class="{ 'end-qna' : item.result }">
                         <!-- Result가 false 라면 클릭안되는 리스트-->
                         <div v-if="!item.result" class="cur"   >
                           <p>
@@ -52,12 +52,12 @@ export default {
   data () {
     return {
       qList: [
-        {title: '강남점, 작업관련 문의', date: '2019. 04. 08', result: false, qatype: 0},
-        {title: '역삼점, 견적관련 문의', date: '2019. 04. 08', result: false, qatype: 0},
-        {title: '선릉점, 기타 문의', date: '2019. 04. 08', result: true, qatype: 0}, // 0이면 질문이고 qatype 1부터는 답변의갯수 질문에 id 값도 있으면 더좋다 연계하기위해
-        {title: '답변1', date: '2019. 04. 08', result: true, qatype: 1},
-        {title: '여의도점, 작업관련 문의', date: '2019. 04. 08', result: true, qatype: 0},
-        {title: '답변2, 기타 문의', date: '2019. 04. 08', result: true, qatype: 1}
+        {id: 1, title: '강남점, 작업관련 문의', date: '2019. 04. 08', result: false, qatype: 0},
+        {id: 2, title: '역삼점, 견적관련 문의', date: '2019. 04. 08', result: false, qatype: 0},
+        {id: 3, title: '선릉점, 기타 문의', date: '2019. 04. 08', result: true, qatype: 0}, // 0이면 질문이고 qatype 1부터는 답변의갯수 질문에 id 값도 있으면 더좋다 연계하기위해
+        {id: 4, title: '답변1', date: '2019. 04. 08', result: true, qatype: 1},
+        {id: 5, title: '여의도점, 작업관련 문의', date: '2019. 04. 08', result: true, qatype: 0},
+        {id: 6, title: '답변2, 기타 문의', date: '2019. 04. 08', result: true, qatype: 1}
       ]
     }
   },
@@ -79,6 +79,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped lang="css">
+  p{
+    margin-bottom:0 !important;
+  }
 </style>

@@ -21,7 +21,7 @@
                 <work-item />
                 <work-item-b />
                   <!--https://mikaeledebro.gitbooks.io/vue-airbnb-style-datepicker/INSTALLATION.html-->                                  
-                    <div class="datepicker-container with-button">
+                    <div class="datepicker-container with-button" >
                       <div class="datepicker-trigger">
                         <button class="mu-btn radi-0 gray_bg" id="datepicker-button-trigger" :value="formatDates(dateOne, dateTwo)">
                           {{ '일정수정' }}
@@ -34,15 +34,18 @@
                           :months-to-show="1"
                           :offset-y="0"
                           :offset-x="100"
-                          :showActionButtons="true"
                           :showShortcutsMenuTrigger="false"
                           :mobile-header="'일정수정'"
+                          :closeAfterSelect="true"
                           :date-one="dateOne"
                           :date-two="dateTwo"
                           @date-one-selected="val => { dateOne = val }"
                           @date-two-selected="val => { dateTwo = val }"
                           :show-action-buttons="true"
                           :close-after-select="false"
+                          :disabled-dates="['2018-10-20', '2019-05-20']"
+                          :min-date="'2019-05-12'"
+                          :end-date="'2019-05-20'"
                         ></airbnb-style-datepicker>
                       </div>
                     </div>

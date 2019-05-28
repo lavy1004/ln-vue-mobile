@@ -10,9 +10,9 @@
               <p class="header_text font_20">작업요청서</p>
             </div>
         </div>
-        <div id="content" class="normal">
+        <div id="content" class="list white_bg">
           <div class="cell">
-            <div class="inner fixed_pd white_bg height100">
+            <div class="inner fixed_pd white_bg">
                 <div>
                     <ul class="ulList type1" >
                       <li  v-for="(item, index) in wList" :key="index" :class="{ 'finish' : item.result }">
@@ -37,14 +37,14 @@
                         </div>
                       </li>
                     </ul>
-                    
-                </div>
-                <div class="overflow-auto c-flex">
-                  <b-pagination
-                    v-model="currentPage"
-                    :total-rows="rows"
-                    :per-page="perPage"
-                  ></b-pagination> 
+                    <div class="overflow-auto c-flex">
+                    <b-pagination
+                      v-model="currentPage"
+                      :total-rows="rows"
+                      :per-page="perPage"
+                    ></b-pagination> 
+                    </div>
+                
 
                 </div>
             </div>
@@ -86,6 +86,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped lang="css">
+  p{
+    margin-bottom:0 !important;
+  }
 </style>

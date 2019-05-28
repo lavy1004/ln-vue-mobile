@@ -61,6 +61,7 @@
       position: relative;
       margin: 0 auto;
       width: 500px;
+      height: 100vh;
       .cell{
         // display: block;
         position: relative;
@@ -103,8 +104,9 @@
         height: 100vh;
         //리스트형
         &.list{
-          width:calc(100% - #{$l_padding}*2);
+          width:calc(100%);
           .inner{
+            height: 100vh;
           }
 
           &~.fixBtmBtn.abs{padding: 0px #{$l_padding};  }
@@ -143,6 +145,7 @@
       }
     }
   }
+  #wrap{height: 100%;}
   
   // @media only screen and (min-width:768px) and (max-width:1023px){ //최소768부터~최대1023까지 일때 적용 min-width 768보다 큰 브라우저 넓이에 적용되며 max-width 1023보다 작은브라우저 너비에 적용됩니다
   //   $l_padding: 18px;

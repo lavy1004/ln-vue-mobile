@@ -15,7 +15,7 @@
         <div id="content" class="normal">
           <div class="cell">
             <div class="inner fixed_pd height100">
-                <qnaItem :result="qList"></qnaItem>
+                <qnaItem></qnaItem>
                 <div v-if="qatype == 0">
                   <ln-button  title="답변 작성" class="radi-0"/>
                 </div>
@@ -39,6 +39,10 @@ export default {
   name: 'workDetail',
   props: {
     // qList List에서 받아올 데이터
+    propdata :{
+      type: Array,
+      default: []
+    }
   },
   components: {
     qnaItem

@@ -21,6 +21,11 @@ const datepickerOptions = {
     inRangeBorder: '#33dacd',
     disabled: '#fff',
     hoveredInRange: '#67f6ee'
+  },
+  texts: {
+    apply: 'Apply',
+    cancel: 'Cancel',
+    keyboardShortcuts: 'Keyboard Shortcuts'
   }
 }
 Vue.use(AirbnbStyleDatepicker, datepickerOptions)

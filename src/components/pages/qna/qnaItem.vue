@@ -39,17 +39,12 @@
 /*eslint-disable */
 export default {
   props: {
-    result //아래 qList는 result값을 받아온데이터를 하드코딩해놓은것 데이터연동시 수정해야함
+    // result //아래 qList는 result값을 받아온데이터를 하드코딩해놓은것 데이터연동시 수정해야함
   },
   data () {
     return {
       qList: [
-        {title: '강남점, 작업관련 문의', date: '2019. 04. 08', qatype: 1},
-        {title: '역삼점, 견적관련 문의', date: '2019. 04. 08'},
-        {title: '선릉점, 기타 문의', date: '2019. 04. 08'}, // 0이면 질문이고 qatype 1부터는 답변의갯수 
-        {title: '답변1', date: '2019. 04. 08'},
-        {title: '여의도점, 작업관련 문의', date: '2019. 04. 08'},
-        {title: '답변2, 기타 문의', date: '2019. 04. 08'}
+        {title: '강남점, 작업관련 문의', date: '2019. 04. 08', qatype: 1, id:1}
       ],
       
     }
