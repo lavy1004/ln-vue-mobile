@@ -18,37 +18,12 @@
         <div id="content" class="normal">
           <div class="cell">
             <div class="inner fixed_pd height100">
-                <work-item />
-                <work-item-b />
-                  <!--https://mikaeledebro.gitbooks.io/vue-airbnb-style-datepicker/INSTALLATION.html-->                                  
-                    <div class="datepicker-container with-button" >
-                      <div class="datepicker-trigger">
-                        <button class="mu-btn radi-0 gray_bg" id="datepicker-button-trigger" :value="formatDates(dateOne, dateTwo)">
-                          {{ '일정수정' }}
-                        </button>
-                        
-                        <airbnb-style-datepicker
-                          :mode="'single'"
-                          :trigger-element-id="'datepicker-button-trigger'"
-                          :fullscreen-mobile="true"
-                          :months-to-show="1"
-                          :offset-y="0"
-                          :offset-x="100"
-                          :showShortcutsMenuTrigger="false"
-                          :mobile-header="'일정수정'"
-                          :closeAfterSelect="true"
-                          :date-one="dateOne"
-                          :date-two="dateTwo"
-                          @date-one-selected="val => { dateOne = val }"
-                          @date-two-selected="val => { dateTwo = val }"
-                          :show-action-buttons="true"
-                          :close-after-select="false"
-                          :disabled-dates="['2018-10-20', '2019-05-20']"
-                          :min-date="'2019-05-12'"
-                          :end-date="'2019-05-20'"
-                        ></airbnb-style-datepicker>
-                      </div>
-                    </div>
+                <work-item :wList="wList" />
+                <work-item-b :wList="wList" />
+                <datepicker 
+                  orientation="landscape"
+                  lang="ko"
+                  disable-passed-days="true"></datepicker> 
                 <ln-button title="완료 확인서 작성하기" class="radi-0"/>
             </div>
           </div>
@@ -60,34 +35,31 @@
 </template>
 
 <script>
+/*eslint-disable */
 import workItem from './workItem'
 import workItemB from './workItemB'
-import format from 'date-fns/format'
+import Datepicker from '../../Datepicker.vue'
 
 export default {
   name: 'workDetail',
   components: {
     workItem,
-    workItemB
+    workItemB,
+    datepicker: Datepicker
   },
   data () {
     return {
-      dateFormat: 'D MMM',
-      dateOne: '',
-      dateTwo: ''
+      orientation: ''
+    }
+  },
+  created() {
+  },
+  computed: {
+    wList () {
+      return this.$store.getters.wList
     }
   },
   methods: {
-    formatDates (dateOne, dateTwo) {
-      let formattedDates = ''
-      if (dateOne) {
-        formattedDates = format(dateOne, this.dateFormat)
-      }
-      if (dateTwo) {
-        formattedDates += ' - ' + format(dateTwo, this.dateFormat)
-      }
-      return formattedDates
-    }
   }
 }
 </script>

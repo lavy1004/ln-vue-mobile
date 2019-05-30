@@ -5,37 +5,26 @@ import App from './App'
 import router from './router'
 import '@/assets/css/css.css'
 import '@/assets/scss/common.scss'
-import '@/assets/datepicker/vue-airbnb-style-datepicker.min.css'
 import BootstrapVue from 'bootstrap-vue'
 import CommonMethodMixin from './mixin/CommonMethodMixin'
-import AirbnbStyleDatepicker from 'vue-airbnb-style-datepicker'
 import lnui from '@/components/component'
+import store from './store/index'
 
 Vue.config.productionTip = false
-const datepickerOptions = {
-  colors: {
-    selected: '#3763e0',
-    inRange: '#66e2da',
-    selectedText: '#fff',
-    text: '#565a5c',
-    inRangeBorder: '#33dacd',
-    disabled: '#fff',
-    hoveredInRange: '#67f6ee'
-  },
-  texts: {
-    apply: 'Apply',
-    cancel: 'Cancel',
-    keyboardShortcuts: 'Keyboard Shortcuts'
-  }
-}
-Vue.use(AirbnbStyleDatepicker, datepickerOptions)
+
 Vue.use(BootstrapVue)
 Vue.use(lnui)
 Vue.mixin(CommonMethodMixin)
+
+var Datepicker = require('./components/Datepicker.vue')
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
+  components:{
+    datepicker: Datepicker
+  },
   render: h => h(App)
 })

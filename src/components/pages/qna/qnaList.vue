@@ -15,23 +15,22 @@
             <div class="inner fixed_pd white_bg">
                 <div>
                     <ul class="ulList type1" >
-                      <li class="pb90" v-for="(item, index) in qList" :propdata="qList" :key="index" :class="{ 'end-qna' : item.result }">
-                        <!-- Result가 false 라면 클릭안되는 리스트-->
-                        <div v-if="!item.result" class="cur"   >
+                      <li class="pb90" v-for="(item, index) in qList" :key="index" :class="{ 'end-qna' : item.result }">
+                        <div v-if="!item.result" class="cur" >
                           <p>
-                            <span class="font_16 fw600" @click="goNext('qnaDetail')">{{item.title}}</span>
+                            <span class="font_16 fw600" @click="goNext(item.id, item.result)">{{item.title}}</span>
                             <span class="fr font_12">{{item.date}}</span>
                           </p>
                         </div>
                         <div v-else class="cur" >
                           <p v-if="item.qatype == 0">
-                            <span class="font_16 fw600" @click="goNext('qnaDetail')">{{item.title}}</span>
+                            <span class="font_16 fw600" @click="goNext(item.id, item.result)">{{item.title}}</span>
                             <span class="fr font_12">{{item.date}}</span>
                           </p>
                           <p v-if="item.qatype > 0" class="pl18">
                             <span><img src="@/assets/img/ico/ic-arrow.png" alt=""></span>
                             <span><img src="@/assets/img/ico/ic-reply.png" alt=""></span>
-                            <span class="font_16">답변완료</span>
+                            <span class="font_16" @click="goNext(item.id, item.result)">답변완료</span>
                             <span class="fr font_12">{{item.date}}</span>
                           </p>
                         </div>
@@ -51,19 +50,17 @@
 export default {
   data () {
     return {
-      qList: [
-        {id: 1, title: '강남점, 작업관련 문의', date: '2019. 04. 08', result: false, qatype: 0},
-        {id: 2, title: '역삼점, 견적관련 문의', date: '2019. 04. 08', result: false, qatype: 0},
-        {id: 3, title: '선릉점, 기타 문의', date: '2019. 04. 08', result: true, qatype: 0}, // 0이면 질문이고 qatype 1부터는 답변의갯수 질문에 id 값도 있으면 더좋다 연계하기위해
-        {id: 4, title: '답변1', date: '2019. 04. 08', result: true, qatype: 1},
-        {id: 5, title: '여의도점, 작업관련 문의', date: '2019. 04. 08', result: true, qatype: 0},
-        {id: 6, title: '답변2, 기타 문의', date: '2019. 04. 08', result: true, qatype: 1}
-      ]
+      
     }
   },
   methods: {
-    goNext (name) {
-      this.$router.push({'name': name.toString()})
+    goNext (nextId, result) {
+      this.$router.push({path: `qnaDetail/${nextId}/${result}`, params: {nextId: nextId, result: result }})
+    } //가져가야될값은 result - 답변유무 //
+  },
+  computed: {
+    qList () {
+      return this.$store.getters.qList
     }
   }
   // created () {

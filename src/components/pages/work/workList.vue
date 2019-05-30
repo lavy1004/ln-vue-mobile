@@ -15,7 +15,7 @@
             <div class="inner fixed_pd white_bg">
                 <div>
                     <ul class="ulList type1" >
-                      <li  v-for="(item, index) in wList" :key="index" :class="{ 'finish' : item.result }">
+                      <li v-for="(item, index) in wList" :key="index" :class="{ 'finish' : item.result }">
                         <!-- Result가 false 라면 클릭안되는 리스트-->
                         <div v-if="item.result" >
                           <p class="font_16 fw600" :class="{ 'act' : item.active }">{{item.title}}</p>
@@ -27,7 +27,7 @@
                           <span v-show="item.result" class="finish-st">작업완료</span>
                         </div>
                         <div v-else class="cur">
-                          <p class="font_16 fw600" :class="{ 'act' : item.active }"  @click="goNext('workDetail')">{{item.title}}</p>
+                          <p class="font_16 fw600" :class="{ 'act' : item.active }"  @click="goNext(item.id)">{{item.title}}</p>
                           <p>
                             <span>{{item.year}}</span>년
                             <span>{{item.month}}</span>월
@@ -64,23 +64,18 @@ export default {
       rows: 100,
       perPage: 10,
       currentPage: 1,
-      wList: [
-        {title: '익스프레스 강남점 작업요청', year: 2019, month: 4, day: 1, active: false, result: false},
-        {title: '익스프레스 역삼점 작업요청', year: 2019, month: 3, day: 31, active: false, result: false},
-        {title: '익스프레스 선릉점 작업요청', year: 2019, month: 3, day: 20, active: false, result: false},
-        {title: '익스프레스 여의도점 작업요청', year: 2019, month: 3, day: 12, active: false, result: false},
-        {title: '익스프레스 부천점 작업요청', year: 2019, month: 3, day: 12, active: true, result: false},
-        {title: '익스프레스 목동점 작업요청', year: 2019, month: 2, day: 27, active: false, result: true},
-        {title: '익스프레스 부평점 작업요청', year: 2019, month: 2, day: 27, active: false, result: true},
-        {title: '익스프레스 영등포점 작업요청', year: 2019, month: 2, day: 27, active: false, result: true},
-        {title: '익스프레스 대림점 작업요청', year: 2019, month: 2, day: 27, active: false, result: true},
-        {title: '익스프레스 가로수길점 작업요청', year: 2019, month: 2, day: 27, active: false, result: true},
-      ],
+    }
+  },
+  created() {
+  },
+  computed: {
+    wList () {
+      return this.$store.getters.wList;
     }
   },
   methods: {
-    goNext (name) {
-      this.$router.push({'name': name.toString()})
+    goNext (nextid) {
+      this.$router.push({path :`workDetail/${nextid}`, params: {nextid : nextid}})
     }
   }
 }

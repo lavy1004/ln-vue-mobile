@@ -24,6 +24,10 @@ export default {
     classObject: {
       type: Object,
       default: null
+    },
+    mode: {
+      type:Boolean,
+      default: true
     }
   },
   data () {
@@ -36,7 +40,13 @@ export default {
   },
   methods: {
     onClick: function () {
-      this.$emit('onClick')
+      this.$emit('onClick2')
+      console.log('이벤트발동')
+    },
+    changeMode() {
+      this.mode = !this.mode
+      let params = this.mode
+      this.$store.commit('changeMode', params)
     }
   }
 }

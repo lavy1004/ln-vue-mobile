@@ -93,3 +93,17 @@
 }
 
 /* qna */
+
+    .gr-box{
+        background-color:#f0f0f0;
+        padding:12px 16px;
+        border-radius:5px;
+    }
+    .inp-lg{
+        font-size:map-get($font_size, font_16);
+        width: 100%;
+        min-height: 240px;
+        &::placeholder{
+            color: map-get($com_colors, B40 );
+        }
+    }

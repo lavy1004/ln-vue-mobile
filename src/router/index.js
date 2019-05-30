@@ -3,12 +3,8 @@ import Router from 'vue-router'
 import Login from '@/components/pages/login/index'
 import Main from '@/components/pages/main'
 
-// import Work from './child/work'
-import WorkList from '@/components/pages/work/workList'
-import WorkDetail from '@/components/pages/work/workDetail'
-
-import QnaList from '@/components/pages/qna/qnaList'
-import QnaDetail from '@/components/pages/qna/qnaDetail'
+import Work from '@/components/pages/work/work'
+import Qna from '@/components/pages/qna/qna'
 
 Vue.use(Router)
 
@@ -37,35 +33,43 @@ export default new Router({
     },
     {
       path: '/work',
-      name: 'workList',
+      name: 'work',
       meta: {
         authorized: false
       },
-      component: WorkList
-    },
-    {
-      path: '/workDetail',
-      name: 'workDetail',
-      meta: {
-        authorized: false
-      },
-      component: WorkDetail
+      component: Work,
+      children: [
+        {
+          path: '/',
+          name: 'workList',
+          component: () => import('@/components/pages/work/workList')
+        },
+        {
+          path: 'workDetail/:id',
+          name: 'workDetail',
+          component: () => import('@/components/pages/work/workDetail')
+        }
+      ]
     },
     {
       path: '/qna',
-      name: 'qnaList',
+      name: 'qna',
       meta: {
         authorized: false
       },
-      component: QnaList
-    },
-    {
-      path: '/qnaDetail',
-      name: 'qnaDetail',
-      meta: {
-        authorized: false
-      },
-      component: QnaDetail
+      component: Qna,
+      children: [
+        {
+          path: '/',
+          name: 'qnaList',
+          component: () => import('@/components/pages/qna/qnaList')
+        },
+        {
+          path: 'qnaDetail/:id/:result',
+          name: 'qnaDetail',
+          component: () => import('@/components/pages/qna/qnaDetail')
+        }
+      ]
     }
   ]
 })

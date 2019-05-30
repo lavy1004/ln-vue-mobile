@@ -16,11 +16,17 @@
           <div class="cell">
             <div class="inner fixed_pd height100">
                 <qnaItem></qnaItem>
-                <div v-if="qatype == 0">
-                  <ln-button  title="답변 작성" class="radi-0"/>
+                <div v-if="result == 'false'">
+                  <div @click="changeMode" v-if="mode == true"><ln-button  title="답변 작성" class="radi-0"/></div>
+                  <div  v-else-if="mode == false"><ln-button onClick2="changeMode" title="답변 등록" class="radi-0"/></div>
                 </div>
                 <div v-else>
-                  <ln-button  title="삭제" class="radi-0" :class="['width50', 'gray_bg']"/><ln-button  title="수정" class="radi-0" :class="'width50'"/>
+                  <div @click="changeMode" v-if="mode == true">
+                    <ln-button  title="삭제" class="radi-0" :class="['width50', 'gray_bg']"/><ln-button title="수정" class="radi-0" :class="'width50'"/>
+                  </div>
+                  <div @click="changeMode" v-else-if="mode == false">
+                    <ln-button title="답변 등록" class="radi-0"/>
+                  </div>
                 </div>
             </div>
           </div>
@@ -37,24 +43,30 @@ import qnaItem from './qnaItem'
 
 export default {
   name: 'workDetail',
-  props: {
-    // qList List에서 받아올 데이터
-    propdata :{
-      type: Array,
-      default: []
-    }
-  },
   components: {
     qnaItem
   },
+  created(){
+    this.result = this.$route.params.result
+  },
   data () {
     return {
-      qatype: 0
+      result: false,
+      mode: true
+    }
+  },
+  methods: {
+    changeMode() {
+      this.mode = !this.mode
+      let params = this.mode
+      this.$store.commit('changeMode', params)
     }
   }
 }
 </script>
 
 <style>
-
+  p{
+    margin-bottom:0;
+  }
 </style>
