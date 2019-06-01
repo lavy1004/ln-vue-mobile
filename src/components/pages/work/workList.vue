@@ -13,27 +13,38 @@
         <div id="content" class="list white_bg">
           <div class="cell">
             <div class="inner fixed_pd white_bg">
+              <!-- popup -->
+              <ln-popup v-if="showConfirm" title="작업 완료확인서" cancelInput="취소" confirmInput="확인" @cancelClick="cancel" @confirmClick="confirm">
+                  <!-- popup body -->
+                  <div class="ly-cnt">
+                      <p>작업완료확인서</p>	
+                  </div>
+              </ln-popup>
                 <div>
                     <ul class="ulList type1" >
                       <li v-for="(item, index) in wList" :key="index" :class="{ 'finish' : item.result }">
                         <!-- Result가 false 라면 클릭안되는 리스트-->
                         <div v-if="item.result" >
-                          <p class="font_16 fw600" :class="{ 'act' : item.active }">{{item.title}}</p>
+                          <p class="font_16 fw600 finish-p" :class="{ 'act' : item.active }">{{item.title}}</p>
                           <p>
                             <span>{{item.year}}</span>년
                             <span>{{item.month}}</span>월
                             <span>{{item.day}}</span>일
                           </p>
-                          <span v-show="item.result" class="finish-st">작업완료</span>
+                          <span v-show="item.result"
+                                class="finish-spn" 
+                                :class="item.pop ? 'pop-ok' : '' "
+                                @click="showPop"
+                          >작업 완료확인서</span>
                         </div>
-                        <div v-else class="cur">
-                          <p class="font_16 fw600" :class="{ 'act' : item.active }"  @click="goNext(item.id)">{{item.title}}</p>
+                        <div v-else class="">
+                          <p class="font_16 fw600 cur" :class="{ 'act' : item.active }"  @click="goNext(item.id)">{{item.title}}</p>
                           <p>
                             <span>{{item.year}}</span>년
                             <span>{{item.month}}</span>월
                             <span>{{item.day}}</span>일
                           </p>
-                          <span v-show="item.result" class="finish-st">작업완료</span>
+                          <span v-show="item.result" class="finish-spn">작업 완료확인서</span>
                         </div>
                       </li>
                     </ul>
@@ -44,12 +55,12 @@
                       :per-page="perPage"
                     ></b-pagination> 
                     </div>
-                
-
                 </div>
             </div>
           </div>
         </div>
+        <!-- //contents -->
+        
       </div>
       <!-- //container -->
     </div>
@@ -64,6 +75,7 @@ export default {
       rows: 100,
       perPage: 10,
       currentPage: 1,
+      showConfirm: false
     }
   },
   created() {
@@ -76,6 +88,15 @@ export default {
   methods: {
     goNext (nextid) {
       this.$router.push({path :`workDetail/${nextid}`, params: {nextid : nextid}})
+    },
+    showPop() {
+      this.showConfirm = true
+    },
+    cancel () {
+      this.showConfirm = false
+    },
+    confirm () {
+      this.showConfirm = false
     }
   }
 }

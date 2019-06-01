@@ -39,11 +39,10 @@ export default {
   mounted () {
   },
   methods: {
-    onClick: function () {
+    onClick () {
       this.$emit('onClick2')
-      console.log('이벤트발동')
     },
-    changeMode() {
+    changeMode () {
       this.mode = !this.mode
       let params = this.mode
       this.$store.commit('changeMode', params)

@@ -15,7 +15,7 @@
             <div class="inner fixed_pd white_bg">
                 <div>
                     <ul class="ulList type1" >
-                      <li class="pb90" v-for="(item, index) in qList" :key="index" :class="{ 'end-qna' : item.result }">
+                      <li v-show="item.delete_YN == false" class="pb90" v-for="(item, index) in qList" :key="index" :class="{ 'end-qna' : item.result }">
                         <div v-if="!item.result" class="cur" >
                           <p>
                             <span class="font_16 fw600" @click="goNext(item.id, item.result)">{{item.title}}</span>
@@ -50,29 +50,33 @@
 export default {
   data () {
     return {
-      
     }
   },
   methods: {
     goNext (nextId, result) {
-      this.$router.push({path: `qnaDetail/${nextId}/${result}`, params: {nextId: nextId, result: result }})
+      if(this.$route.path == '/qna/'){
+        this.$router.push({path: `qnaDetail/${nextId}/${result}`, params: {nextId: nextId, result: result }})
+      } else {
+        this.$router.push({path: `/qna/qnaDetail/${nextId}/${result}`, params: {nextId: nextId, result: result }})
+      }
+      
     } //가져가야될값은 result - 답변유무 //
   },
   computed: {
     qList () {
       return this.$store.getters.qList
     }
-  }
-  // created () {
-  //   this.$store.commit('qList', true)
-  //   var param = {
-  //     'store_id': this.$route.params.store_id,
-  //     'table_id': this.$route.params.table_id
-  //   }
+  },
+  created () {
+    // this.$store.commit('qList', true)
+    // var param = {
+    //   'store_id': this.$route.params.store_id,
+    //   'table_id': this.$route.params.table_id
+    // }
 
-  //   this.$store.dispatch('', param).then((res) => {
-  //   })
-  // }
+    // this.$store.dispatch('', param).then((res) => {
+    // })
+  }
 }
 </script>
 

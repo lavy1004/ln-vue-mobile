@@ -15,6 +15,9 @@
                     <p class="font_16 mb32">
                         안녕하세요. 강남점 ooo입니다. 다름이아니라 저희가 이번에 청소를 예약하려고하는데 어닝프레임과 유리의 차이를 알고싶습니다. <br/>감사합니다.
                     </p>
+                    <figure @click="showImg" class="inb mr8" style="width:82px; height:82px;" v-for="(item, index) in imgList" :key="index">
+                        <img style="width:100%" src='@/assets/img/non.png' alt="">
+                    </figure>
                     <p class="font_14 mb24 gr-box">
                         <span class="font_16 fw600 mr12">연락처</span>
                         <span>01012345678</span>
@@ -59,8 +62,21 @@ export default {
   data () {
     return {
       id: '',
-      mode: ''
+      mode: '',
+      imgList: [
+          { sorce: 'url' },
+          { sorce: 'url' },
+          { sorce: 'url' },
+          { sorce: 'url' },
+          { sorce: 'url' },
+          { sorce: 'url' },
+      ]
     }
+  },
+  methods: {
+      showImg(){
+          this.$emit('ev_showImg')
+      }
   }
 }
 </script>

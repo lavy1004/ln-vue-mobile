@@ -74,6 +74,7 @@ button.disable {color:map-get($mono_colors, mono_25);}
 
 .clear{clear:both;}
 .block{display:block !important}
+.inb{display:inline-block !important}
 
 .mono_100 {color: map-get($mono_colors, mono_100) !important;}
 .mono_80 {color: map-get($mono_colors, mono_80) !important;}
@@ -117,3 +118,17 @@ button.disable {color:map-get($mono_colors, mono_25);}
 .ulList.type2 li {padding: 20px 48px;}
 .ulList.type2 li.pd-qna {padding: 24px 16px 90px;}
 .ulList.type2 li div p span.mono_96{color:map-get($mono_colors, mono_96);}
+
+
+/* layer */
+.layerWrap{position:fixed; z-index:900; width:500px; padding:16px; margin:0 auto; text-align:center; overflow:hidden;top: 50%; transform: translate(0%, -50%); }
+.layerWrap .ly-in{padding:26px; text-align: left; background:#fff;}
+.layerWrap .ly-hd{font-size:map-get($font_size, font_18); color:#000; font-weight: 500; margin-bottom:12px;}
+.layerWrap .ly-body{font-size:map-get($font_size, font_15); line-height: 22px; letter-spacing: -0.045em;color:rgba(0,0,0,0.65);font-weight: 400;word-break: keep-all;/*max-height:239px;overflow: scroll*/}
+.layerWrap .ly-body .ly-info{color:rgba(0,0,0,0.80);margin-top:12px;font-weight: 500;}
+.layerWrap .ly-btn{text-align: right;margin-top:15px;}
+.layerWrap .ly-btn .btn2{font-size:map-get($font_size, font_14); line-height: 20px; font-weight: 500; letter-spacing: -0.048em; width:initial}
+.layerWrap .ly-btn .btn2 + .btn2{margin-left:32px;}
+.layerWrap .time {padding-left:39px}
+
+#dim{position:fixed; z-index:850; top:0; bottom:0; left:0; right:0; background:rgba(0,0,0,0.6)}

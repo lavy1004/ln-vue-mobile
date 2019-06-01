@@ -24,7 +24,6 @@
                   orientation="landscape"
                   lang="ko"
                   disable-passed-days="true"></datepicker> 
-                <ln-button title="완료 확인서 작성하기" class="radi-0"/>
             </div>
           </div>
         </div>

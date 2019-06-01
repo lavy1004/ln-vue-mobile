@@ -67,15 +67,22 @@
     .act{
         color:map-get($contents_colors, type_2 )
     }
-    .finish-st{
+    .finish-p{
+        color:map-get($com_colors, B7D );
+    }
+    .finish-spn{
         border:1px solid map-get($com_colors, B40 );
-        color:map-get($com_colors, B40 );
+        color:map-get($com_colors, B7D );
+        background:white;
         padding: 7px 10px;
         position: absolute;
         top: calc(50% - 19px);
         right: 16px;
         border-radius: 4px;
         font-weight: bold;
+        &.pop-ok{
+            color:map-get($contents_colors, type_1 )
+        }
     }
 }
 
