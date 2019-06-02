@@ -15,19 +15,21 @@
                     <p class="font_16 mb32">
                         안녕하세요. 강남점 ooo입니다. 다름이아니라 저희가 이번에 청소를 예약하려고하는데 어닝프레임과 유리의 차이를 알고싶습니다. <br/>감사합니다.
                     </p>
-                    <figure @click="showImg" class="inb mr8" style="width:82px; height:82px;" v-for="(item, index) in imgList" :key="index">
-                        <img style="width:100%" src='@/assets/img/non.png' alt="">
-                    </figure>
-                    <p class="font_14 mb24 gr-box">
+                    <div class="c-mobile">
+                        <figure @click="showImg" class="inb mr8 img-wrap" style="" v-for="(item, index) in imgList" :key="index">
+                            <img style="width:100%" src='@/assets/img/non.png' alt="">
+                        </figure>
+                    </div>
+                    <p class="font_14 mb24 gr-box mt32">
                         <span class="font_16 fw600 mr12">연락처</span>
                         <span>01012345678</span>
                     </p>
                 </div>
                 <div v-if="item.result == true">
-                    <p>
+                    <p class="mb4">
                         <span><img src="@/assets/img/ico/ic-arrow.png" alt=""></span>
                         <span><img src="@/assets/img/ico/ic-reply.png" alt=""></span>
-                        <span class="font_16 fw600">답변완료</span>
+                        <span class="font_16 fw600 c-vertical">답변완료</span>
                     </p>
                     <p class="pl18"><span class="font_14">{{item.date}}</span></p>
                     <p class="hr"></p>
@@ -36,6 +38,8 @@
                     </textarea>
                 </div>
                 <div v-else>
+                    <!-- qList -> item -> item.reply로 데이터저장 -->
+                    <p class="font_16" v-if="changeMode == true">{{item.reply}}</p>
                     <textarea class="inp-lg"  placeholder="답변 내용을 입력하세요." v-if="changeMode == false" v-model="item.reply">
                     </textarea>
                 </div>
@@ -82,5 +86,7 @@ export default {
 </script>
 
 <style>
-
+  figure{
+    margin-bottom:0 !important;
+  }
 </style>

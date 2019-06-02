@@ -1,9 +1,6 @@
 <template>
 <!-- eslint-disable -->
-    <!-- wrap -->
-    <div id="wrap">
-      <!-- container -->
-      <div id="container" class="mediaquery com_bg">
+      <div>
         <div id="header" class="custom_bg fixed" >
             <div class="header_card">
               <button type="button" class="btn1 only prev" @click="goBack">
@@ -17,7 +14,7 @@
         </div>
         <div id="content" class="normal">
           <div class="cell">
-            <div class="inner fixed_pd height100">
+            <div v-if="is_completion == false" class="inner fixed_pd height100">
                 <work-item :wList="wList" />
                 <work-item-b :wList="wList" />
                 <datepicker 
@@ -25,18 +22,19 @@
                   lang="ko"
                   disable-passed-days="true"></datepicker> 
             </div>
+            <div v-else class="inner fixed_pd height100">
+              <!-- <work-item-c :wList="wList" /> -->
+            </div>
           </div>
         </div>
       </div>
-      <!-- //container -->
-    </div>
-    <!-- //wrap -->
 </template>
 
 <script>
 /*eslint-disable */
 import workItem from './workItem'
 import workItemB from './workItemB'
+import workItemC from './workItemC'
 import Datepicker from '../../Datepicker.vue'
 
 export default {
@@ -44,6 +42,7 @@ export default {
   components: {
     workItem,
     workItemB,
+    workItemC,
     datepicker: Datepicker
   },
   data () {
@@ -56,6 +55,9 @@ export default {
   computed: {
     wList () {
       return this.$store.getters.wList
+    },
+    is_completion () {
+      return this.$store.getters.is_completion
     }
   },
   methods: {

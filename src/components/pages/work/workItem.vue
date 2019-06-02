@@ -2,7 +2,7 @@
     <div class="white_bg">
         <ul class="ulList type2" >
             <li v-show="id == index" v-for="(item, index) in wList"  :key="index">
-                <div >
+                <div>
                     <div>
                         <p class="font_14 mb12">
                             <span class="mono_96">작업일</span>

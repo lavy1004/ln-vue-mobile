@@ -23,7 +23,7 @@ new Vue({
   el: '#app',
   router,
   store,
-  components:{
+  components: {
     datepicker: Datepicker
   },
   render: h => h(App)

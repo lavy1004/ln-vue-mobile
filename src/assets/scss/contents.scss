@@ -114,3 +114,11 @@
             color: map-get($com_colors, B40 );
         }
     }
+    .img-wrap{
+        width:87px; 
+        height:100%; 
+        margin-bottom:8px !important;
+        &:nth-child(5){
+            margin-right:0px;
+        }
+    }

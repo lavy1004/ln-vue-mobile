@@ -101,6 +101,10 @@
         }
       }
       & #content{
+        .layerWrap{
+          width:100%;
+          transform:translate(-4%, -50%);
+        }
         height: 100vh;
         //리스트형
         &.list{
@@ -117,6 +121,20 @@
           .cell{
             .inner{ 
               margin:0 auto;
+              .img-wrap{
+                &:nth-child(3){
+                  margin-right:0px;
+                }
+                &:nth-child(5){
+                  margin-right:8px;
+                }
+                &:nth-child(6){
+                  margin-right:0px;
+                }
+              }
+              .c-mobile{
+                text-align: center;
+              }
               .lo-card{
                 margin-top:0;
               }

@@ -42,7 +42,8 @@ export default new Router({
         {
           path: '/',
           name: 'workList',
-          component: () => import('@/components/pages/work/workList')
+          component: () => import('@/components/pages/work/workList'),
+          props: {id: this.id, result: true}
         },
         {
           path: 'workDetail/:id',

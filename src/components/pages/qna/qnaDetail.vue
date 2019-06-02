@@ -78,7 +78,11 @@ export default {
   methods: {
     changeMode() {
       this.mode = !this.mode
-      let params = this.mode
+      this.result = !this.result
+      let params = {
+        mode: this.mode,
+        result: this.result
+      }
       this.$store.commit('changeMode', params)
     },
     showPop() {
@@ -112,6 +116,6 @@ export default {
     margin-bottom:0;
   }
   figure{
-    margin-bottom:0;
+    margin-bottom:0 !important;
   }
 </style>

@@ -12,6 +12,7 @@
 .pl18{padding-left:18px;}
 
 .mb0{margin-bottom: 0;}
+.mb4{margin-bottom: 4px;}
 .mb8{margin-bottom:8px;}
 .mb12{margin-bottom:12px;}
 .mb24{margin-bottom:24px;}
@@ -22,6 +23,7 @@
 .mr12{margin-right: 12px;}
 
 .mt24{margin-top: 24px;}
+.mt32{margin-top: 32px;}
 .mt50{margin-top: 50px;}
 .mt62{margin-top: 62px;}
 .mt100{margin-top: 100px;}
@@ -33,7 +35,11 @@
 .fr{float: right;}
 .fl{float: left;}
 
+.lh25{line-height: 25px}
+
 .c-flex{display: flex;justify-content: center;}
+.c-mobile{text-align:justify;} /*모바일시 center로 변경됨*/
+.c-vertical{vertical-align: middle}
 .radi-0{border-radius:0 !important;}
 .hr{border-bottom:1px solid #b4b4b4; margin:24px 0;}
 

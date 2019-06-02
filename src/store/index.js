@@ -11,7 +11,7 @@ const store = new Vuex.Store({
     state: {
         wList: [
             {
-                id: 0, title: '익스프레스 강남점 작업요청', year: 2019, month: 4, day: 1, active: false, result: false, pop: false,
+                id: 0, title: '익스프레스 강남점 작업요청', year: 2019, month: 4, day: 1, active: false, result: false, completion: false,
                 orderList : [
                     {order_time : '2019년 4월 30일 화요일', store_name: '강남지점 직영점', name: '유재석', position: '매니저', mobile: '01012345678' }
                 ],
@@ -19,7 +19,7 @@ const store = new Vuex.Store({
                     {wax : '5,000', size: '68', neonsign: '300,000', freeze: '350,000', light: '720,000', tent: '50,000', total: '1,760,000' }
                 ]
             },
-            {id: 1, title: '익스프레스 역삼점 작업요청', year: 2019, month: 3, day: 31, active: false, result: false, pop: false,
+            {id: 1, title: '익스프레스 역삼점 작업요청', year: 2019, month: 3, day: 31, active: false, result: false, completion: false,
                 orderList : [
                     {order_time : '2019년 4월 29일 월요일', store_name: '역삼지점 직영점', name: '하하', position: '스탭', mobile: '01012345678' }
                 ],
@@ -27,65 +27,65 @@ const store = new Vuex.Store({
                     {wax : '5,000', size: '68', neonsign: '300,000', freeze: '350,000', light: '720,000', tent: '50,000', total: '1,760,000' }
                 ]
             },
-            {id: 2, title: '익스프레스 선릉점 작업요청', year: 2019, month: 3, day: 20, active: false, result: false, pop: false,
+            {id: 2, title: '익스프레스 선릉점 작업요청', year: 2019, month: 3, day: 20, active: false, result: false, completion: false,
                 orderList : [
-                    {order_time : '2019년 4월 29일 월요일', store_name: '역삼지점 직영점', name: '박명수', position: '스탭', mobile: '01012345678' }
+                    {order_time : '2019년 4월 29일 월요일', store_name: '선릉지점 직영점', name: '박명수', position: '스탭', mobile: '01012345678' }
                 ],
                 priceList : [
                     {wax : '5,000', size: '68', neonsign: '300,000', freeze: '350,000', light: '720,000', tent: '50,000', total: '1,760,000' }
                 ]
             },
-            {id: 3, title: '익스프레스 여의도점 작업요청', year: 2019, month: 3, day: 12, active: false, result: false, pop: false,
+            {id: 3, title: '익스프레스 여의도점 작업요청', year: 2019, month: 3, day: 12, active: false, result: false, completion: false,
                 orderList : [
-                    {order_time : '2019년 4월 29일 월요일', store_name: '역삼지점 직영점', name: '정준하', position: '스탭', mobile: '01012345678' }
+                    {order_time : '2019년 4월 29일 월요일', store_name: '여의도지점 직영점', name: '정준하', position: '스탭', mobile: '01012345678' }
                 ],
                 priceList : [
                     {wax : '5,000', size: '68', neonsign: '300,000', freeze: '350,000', light: '720,000', tent: '50,000', total: '1,760,000' }
                 ]
             },
-            {id: 4, title: '익스프레스 부천점 작업요청', year: 2019, month: 3, day: 12, active: true, result: false, pop: false,
+            {id: 4, title: '익스프레스 부천점 작업요청', year: 2019, month: 3, day: 12, active: true, result: false, completion: false,
                 orderList : [
-                    {order_time : '2019년 4월 29일 월요일', store_name: '역삼지점 직영점', name: '하하', position: '스탭', mobile: '01012345678' }
+                    {order_time : '2019년 4월 29일 월요일', store_name: '부천지점 직영점', name: '하하', position: '스탭', mobile: '01012345678' }
                 ],
                 priceList : [
                     {wax : '5,000', size: '68', neonsign: '300,000', freeze: '350,000', light: '720,000', tent: '50,000', total: '1,760,000' }
                 ]
             },
-            {id: 5, title: '익스프레스 목동점 작업요청', year: 2019, month: 2, day: 27, active: false, result: true, pop: false,
+            {id: 5, title: '익스프레스 목동점 작업요청', year: 2019, month: 2, day: 27, active: false, result: true, completion: false,
             orderList : [
-                {order_time : '2019년 4월 29일 월요일', store_name: '역삼지점 직영점', name: '하하', position: '스탭', mobile: '01012345678' }
+                {order_time : '2019년 4월 29일 월요일', store_name: '목동지점 직영점', name: '하하', position: '스탭', mobile: '01012345678' }
             ],
             priceList : [
                 {wax : '5,000', size: '68', neonsign: '300,000', freeze: '350,000', light: '720,000', tent: '50,000', total: '1,760,000' }
             ]
             },
-            {id: 6, title: '익스프레스 부평점 작업요청', year: 2019, month: 2, day: 27, active: false, result: true, pop: true,
+            {id: 6, title: '익스프레스 부평점 작업요청', year: 2019, month: 2, day: 27, active: false, result: true, completion: true,
             orderList : [
-                {order_time : '2019년 4월 29일 월요일', store_name: '역삼지점 직영점', name: '하하', position: '스탭', mobile: '01012345678' }
+                {order_time : '2019년 4월 29일 월요일', store_name: '부평지점 직영점', name: '하하', position: '스탭', mobile: '01012345678' }
             ],
             priceList : [
                 {wax : '5,000', size: '68', neonsign: '300,000', freeze: '350,000', light: '720,000', tent: '50,000', total: '1,760,000' }
             ]
             },
-            {id: 7, title: '익스프레스 영등포점 작업요청', year: 2019, month: 2, day: 27, active: false, result: true, pop: true,
+            {id: 7, title: '익스프레스 영등포점 작업요청', year: 2019, month: 2, day: 27, active: false, result: true, completion: true,
             orderList : [
-                {order_time : '2019년 4월 29일 월요일', store_name: '역삼지점 직영점', name: '하하', position: '스탭', mobile: '01012345678' }
+                {order_time : '2019년 4월 29일 월요일', store_name: '영등포지점 직영점', name: '하하', position: '스탭', mobile: '01012345678' }
             ],
             priceList : [
                 {wax : '5,000', size: '68', neonsign: '300,000', freeze: '350,000', light: '720,000', tent: '50,000', total: '1,760,000' }
             ]
             },
-            {id: 8, title: '익스프레스 대림점 작업요청', year: 2019, month: 2, day: 27, active: false, result: true, pop: true,
+            {id: 8, title: '익스프레스 대림점 작업요청', year: 2019, month: 2, day: 27, active: false, result: true, completion: true,
             orderList : [
-                {order_time : '2019년 4월 29일 월요일', store_name: '역삼지점 직영점', name: '하하', position: '스탭', mobile: '01012345678' }
+                {order_time : '2019년 4월 29일 월요일', store_name: '대림지점 직영점', name: '하하', position: '스탭', mobile: '01012345678' }
             ],
             priceList : [
                 {wax : '5,000', size: '68', neonsign: '300,000', freeze: '350,000', light: '720,000', tent: '50,000', total: '1,760,000' }
             ]
             },
-            {id: 9, title: '익스프레스 가로수길점 작업요청', year: 2019, month: 2, day: 27, active: false, result: true, pop: true,
+            {id: 9, title: '익스프레스 가로수길점 작업요청', year: 2019, month: 2, day: 27, active: false, result: true, completion: true,
             orderList : [
-                {order_time : '2019년 4월 29일 월요일', store_name: '역삼지점 직영점', name: '하하', position: '스탭', mobile: '01012345678' }
+                {order_time : '2019년 4월 29일 월요일', store_name: '가로수길지점 직영점', name: '하하', position: '스탭', mobile: '01012345678' }
             ],
             priceList : [
                 {wax : '5,000', size: '68', neonsign: '300,000', freeze: '350,000', light: '720,000', tent: '50,000', total: '1,760,000' }
@@ -104,16 +104,18 @@ const store = new Vuex.Store({
             {id: 5, qid: 4, aid: 0, date: '2019. 04. 08', result: true, qatype: 1, delete_YN: false,
             reply: '안녕하세요. 여의도점 ooo님 담당자 xxx입니다. 유리와 어닝프레임의 차이점을 문자로 안내드렸습니다! 많은 도움 되셨길 바랍니다. 감사합니다.'}
           ],
-          mode: ''
+          mode: '',
+          comp_YN: false
     },
     getters: {
         wList: state => state.wList,
         qList: state => state.qList,
         changeMode: state => state.mode,
+        is_completion: state => state.comp_YN
     },
     mutations: {
-        changeMode(state, mode) {
-            state.mode = mode
+        changeMode(state, payload) {
+            state.mode = payload
         },
         delete_YN(state, input) {
             if(state.qList[input.id].qatype > 0){
@@ -125,6 +127,9 @@ const store = new Vuex.Store({
                 state.qList[state.qList[input.id].aid].delete_YN = true
                 state.qList[input.id].result = false
             }
+        },
+        is_completion(state, payload){
+            state.comp_YN = payload
         }
     },
     actions: {

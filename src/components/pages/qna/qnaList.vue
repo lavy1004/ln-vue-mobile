@@ -25,13 +25,13 @@
                         <div v-else class="cur" >
                           <p v-if="item.qatype == 0">
                             <span class="font_16 fw600" @click="goNext(item.id, item.result)">{{item.title}}</span>
-                            <span class="fr font_12">{{item.date}}</span>
+                            <span class="fr font_12 lh25">{{item.date}}</span>
                           </p>
                           <p v-if="item.qatype > 0" class="pl18">
                             <span><img src="@/assets/img/ico/ic-arrow.png" alt=""></span>
                             <span><img src="@/assets/img/ico/ic-reply.png" alt=""></span>
-                            <span class="font_16" @click="goNext(item.id, item.result)">답변완료</span>
-                            <span class="fr font_12">{{item.date}}</span>
+                            <span class="font_16 fw600 c-vertical" @click="goNext(item.id, item.result)">답변완료</span>
+                            <span class="fr font_12 lh25">{{item.date}}</span>
                           </p>
                         </div>
                       </li>
@@ -56,7 +56,7 @@ export default {
     goNext (nextId, result) {
       if(this.$route.path == '/qna/'){
         this.$router.push({path: `qnaDetail/${nextId}/${result}`, params: {nextId: nextId, result: result }})
-      } else {
+      } else if(this.$route.path == '/qna') {
         this.$router.push({path: `/qna/qnaDetail/${nextId}/${result}`, params: {nextId: nextId, result: result }})
       }
       
