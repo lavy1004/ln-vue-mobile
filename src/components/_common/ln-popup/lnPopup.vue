@@ -1,6 +1,6 @@
 <template>
   <div >
-    <div class="layerWrap" @click="cancelClick">
+    <div class="layerWrap" @click="cancelClick" :class="classObjectWrap">
       <div
         ref="popLayer"
         class="ly-in"
@@ -11,8 +11,9 @@
           class="ly-hd">
           {{ title }}
         </div>
+        <slot name="ico"/>
         <div class="ly-body">
-          <slot/>
+          <slot name="main"/>
         </div>
         <div
           class="ly-btn">
@@ -42,6 +43,10 @@
 export default {
   name: 'lnPopup',
   props: {
+    classObjectWrap: {
+      type: String,
+      default: null
+    },
     classObject: {
       type: String,
       default: null

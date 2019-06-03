@@ -23,7 +23,7 @@
                           </p>
                           <span v-show="item.result == true && item.completion == true"
                                 class="finish-spn cur pop-ok"
-                                @click="goNext(item.id)"
+                                @click="goNext_com(item.id)"
                           >작업 완료확인서</span>
                           <span v-show="item.result == true && item.completion == false"
                                 class="finish-spn" 
@@ -75,11 +75,10 @@ export default {
   },
   methods: {
     goNext (nextid) {
-      // // let param ={
-      // //   comp_YN : true
-      // // }
-      // this.$store.commit('is_completion', param)
       this.$router.push({path :`workDetail/${nextid}`, params: {nextid : nextid}})
+    },
+    goNext_com(nextid){
+      this.$router.push({path :`workCompletion/${nextid}`, params: {nextid : nextid}})
     },
     cancel () {
       this.showConfirm = false

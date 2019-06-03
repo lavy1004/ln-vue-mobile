@@ -84,7 +84,7 @@
           background-color:transparent;
           border-radius: 0;
           position: relative;
-          width:calc(100% - #{$n_padding}*2);
+          width:calc(100%);
           padding-left:0px;
           padding-right:0px;
         }
@@ -121,6 +121,17 @@
           .cell{
             .inner{ 
               margin:0 auto;
+              .ulList.type2 li{
+                padding:20px 16px;
+              }
+              .img-wrap-lg{
+                &:nth-child(4){
+                  margin-right:8px;
+                }
+                &:nth-child(7){
+                  margin-right:8px;
+                }
+              }
               .img-wrap{
                 &:nth-child(3){
                   margin-right:0px;

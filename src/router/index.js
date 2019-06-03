@@ -49,6 +49,11 @@ export default new Router({
           path: 'workDetail/:id',
           name: 'workDetail',
           component: () => import('@/components/pages/work/workDetail')
+        },
+        {
+          path: 'workCompletion/:id',
+          name: 'workCompletion',
+          component: () => import('@/components/pages/work/workCompletion')
         }
       ]
     },

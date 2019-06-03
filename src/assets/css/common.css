@@ -8,7 +8,11 @@
 .ico.down{ font-size: 0;vertical-align: middle;background: url(../img/ico/ic-download.png) no-repeat center;}
 
 .pd0{padding:0 !important;}
-.pb90{padding-bottom:90px ;}
+
+.pt48{padding-top:48px !important;}
+
+.pb90{padding-bottom:90px;}
+
 .pl18{padding-left:18px;}
 
 .mb0{margin-bottom: 0;}
@@ -42,5 +46,6 @@
 .c-vertical{vertical-align: middle}
 .radi-0{border-radius:0 !important;}
 .hr{border-bottom:1px solid #b4b4b4; margin:24px 0;}
+.hr2{border-bottom:1px solid #3763e0; margin:16px 0;}
 
 .cur{cursor: pointer;}

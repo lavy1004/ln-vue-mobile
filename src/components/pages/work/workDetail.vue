@@ -23,7 +23,7 @@
                   disable-passed-days="true"></datepicker> 
             </div>
             <div v-else class="inner fixed_pd height100">
-              <!-- <work-item-c :wList="wList" /> -->
+                <work-item-c :wList="wList" />
             </div>
           </div>
         </div>

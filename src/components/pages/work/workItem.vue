@@ -45,10 +45,7 @@ export default {
     props:['wList'],
     data() {
         return {
-            id: '',
-            // orderList : [
-            //     {order_time : '2019년 4월 30일 화요일', store_name: '강남지점 직영점', name: '유재석', position: '매니저', mobile: '01012345678' }
-            // ]
+            id: ''
         }
     },
     created() {

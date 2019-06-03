@@ -16,12 +16,13 @@
           <div class="cell">
             <div class="inner fixed_pd height100">
                 <qnaItem @ev_showImg="showImgPop"></qnaItem>
-                <div v-if="result == 'false'">
+                <!-- result 값에따라서 답변작성 버튼1개 또는 수정과 삭제버튼을 보여주는것을 결정 -->
+                <div v-if="result == false">
                   <!-- mode로 textarea로 입력 모드 or p로 읽기 모드 변경과 button의 이름변경 -->
                   <div @click="changeMode" v-if="mode == true"><ln-button  title="답변 작성" class="radi-0"/></div>
                   <div @click="changeMode" v-else-if="mode == false"><ln-button title="답변 등록" class="radi-0"/></div>
                 </div>
-                <div v-else-if="result == 'true'">
+                <div v-else-if="result == true">
                   <div v-if="mode == true">
                     <!-- 삭제버튼시 팝업을 showPop 으로 보여줍니다 -->
                     <span @click="showPop()"><ln-button  title="삭제" class="radi-0" :class="['width50', 'gray_bg']"/></span><span  @click="changeMode"><ln-button title="수정" class="radi-0" :class="'width50'"/></span>
@@ -34,13 +35,19 @@
           </div>
           <!-- content -->
           <!-- popup -->
-          <ln-popup v-if="showImg" @cancelClick="cancel" :classObject="'pd0'">
+          <ln-popup v-if="showImg" @cancelClick="cancel" :classObjectWrap="'pt48'" :classObject="'pd0'">
               <!-- popup body -->
-              <div class="ly-cnt">
-                <figure class="inb">
-                  <img style="width:100%" src='@/assets/img/non.png' alt="">
-                </figure>	
-              </div>
+                <div slot="ico" class="close-ico">
+                    <div>
+                        <img src="@/assets/img/ico/ic-close.png" alt="">
+                    </div>
+                    
+                </div>
+                <div slot="main">
+                    <figure class="inb">
+                        <img style="width:100%" src='@/assets/img/non.png' alt="">
+                    </figure>
+                </div>
           </ln-popup>
           <!-- popup -->
           <ln-popup v-if="showConfirm" title="답변을 삭제할까요" cancelInput="취소" deleteInput="삭제하기" @cancelClick="cancel" @deleteClick="deletePage" @confirmClick="confirm">
@@ -62,7 +69,8 @@ export default {
     qnaItem
   },
   created(){
-    this.result = this.$route.params.result // 문자열로 넘어옴 라우터에서 확인필요 result
+    this.result = Boolean(this.$route.params.result) // 숫자로 넘어온값을 true,false로 이용 근대 0과 1을 또 다시 문자로 라우터에서 바뀜..
+    console.log(this.result) 
   },
   data () {
     return {
@@ -88,6 +96,9 @@ export default {
     showPop() {
       this.showConfirm = true
     },
+    showImgPop() {
+      this.showImg = true
+    },
     cancel () {
       this.showConfirm = false
       this.showImg = false
@@ -103,9 +114,6 @@ export default {
       }
       this.$store.commit('delete_YN', params)
       this.$router.push('/qna')
-    },
-    showImgPop() {
-      this.showImg = true
     }
   }
 }

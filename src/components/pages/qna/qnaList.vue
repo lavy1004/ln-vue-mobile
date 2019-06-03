@@ -16,13 +16,13 @@
                 <div>
                     <ul class="ulList type1" >
                       <li v-show="item.delete_YN == false" class="pb90" v-for="(item, index) in qList" :key="index" :class="{ 'end-qna' : item.result }">
-                        <div v-if="!item.result" class="cur" >
-                          <p>
+                        <div v-if="!item.result && item.qatype == 0" class="cur" >
+                          <p v-if="item.qatype == 0">
                             <span class="font_16 fw600" @click="goNext(item.id, item.result)">{{item.title}}</span>
                             <span class="fr font_12">{{item.date}}</span>
                           </p>
                         </div>
-                        <div v-else class="cur" >
+                        <div v-else-if="item.result" class="cur" >
                           <p v-if="item.qatype == 0">
                             <span class="font_16 fw600" @click="goNext(item.id, item.result)">{{item.title}}</span>
                             <span class="fr font_12 lh25">{{item.date}}</span>
