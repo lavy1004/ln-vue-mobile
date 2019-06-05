@@ -93,68 +93,82 @@ const store = new Vuex.Store({
             },
           ],
           qList: [
-            {id: 0, title: '강남점, 작업관련 문의', qid: 0, aid: 1,date: '2019. 04. 08', result: false, qatype: 0, delete_YN: false,
-            reply: '안녕하세요. 강남점 ooo님 담당자 xxx입니다. 유리와 어닝프레임의 차이점을 문자로 안내드렸습니다! 많은 도움 되셨길 바랍니다. 감사합니다.'},
-            {id: 1, qid: 0, aid:0 ,date: '2019. 04. 08', result: false, qatype: 1, delete_YN: false,
-            reply: '안녕하세요. 강남점 ooo님 담당자 xxx입니다. 유리와 어닝프레임의 차이점을 문자로 안내드렸습니다! 많은 도움 되셨길 바랍니다. 감사합니다.'
-            }, // result값이 boolean이어야함
-            {id: 2, title: '역삼점, 견적관련 문의', qid: 0, aid: 3, date: '2019. 04. 08', result: false, qatype: 0, delete_YN: false,
-            reply: '안녕하세요. 역삼점 ooo님 담당자 xxx입니다. 유리와 어닝프레임의 차이점을 문자로 안내드렸습니다! 많은 도움 되셨길 바랍니다. 감사합니다.'
+            {
+                id: 0, title: '강남점, 작업관련 문의', qid: 0, aid: 1, date: '2019. 04. 08', result: false, qatype: 0, delete_YN: false,
+                reply: '', ans_li: {}
+            }, // result값이 boolean이어야함 라우터로 이동시 모든 값은 string으로 자동변환됨
+            {
+                id: 1, title: '역삼점, 견적관련 문의', qid: 1, aid: 2, date: '2019. 04. 08', result: false, qatype: 0, delete_YN: false,
+                reply: '', ans_li: {} 
             },
-            {id: 3, qid: 2, aid: 0, date: '2019. 04. 08', result: false, qatype: 1, delete_YN: false,
-            reply: '안녕하세요. 역삼점 ooo님 담당자 xxx입니다. 유리와 어닝프레임의 차이점을 문자로 안내드렸습니다! 많은 도움 되셨길 바랍니다. 감사합니다.'
+            {
+                id: 2, title: '선릉점, 기타 문의', qid: 2, aid: 0, date: '2019. 04. 08', result: false, qatype: 0, delete_YN: false,
+                reply: '', ans_li: {} 
+            }, // 0이면 질문이고 qatype 1부터는 답변의갯수 질문에 id 값도 있으면 더좋다 연계하기위해
+            {
+                id: 3, title: '여의도점, 작업관련 문의', qid:3, aid: 0, date: '2019. 04. 08', result: false, qatype: 0, delete_YN: false,
+                reply: '', ans_li: {}
             },
-            {id: 4, title: '선릉점, 기타 문의', qid: 0, aid: 5, date: '2019. 04. 08', result: true, qatype: 0, delete_YN: false,
-            reply: '안녕하세요. 선릉점 ooo님 담당자 xxx입니다. 유리와 어닝프레임의 차이점을 문자로 안내드렸습니다! 많은 도움 되셨길 바랍니다. 감사합니다.'}, // 0이면 질문이고 qatype 1부터는 답변의갯수 질문에 id 값도 있으면 더좋다 연계하기위해
-            {id: 5, qid: 4, aid: 0, date: '2019. 04. 08', result: true, qatype: 1, delete_YN: false, 
-            reply: '안녕하세요. 선릉점 ooo님 담당자 xxx입니다. 유리와 어닝프레임의 차이점을 문자로 안내드렸습니다! 많은 도움 되셨길 바랍니다. 감사합니다.'},
-            {id: 6, title: '여의도점, 작업관련 문의', qid:0, aid: 7, date: '2019. 04. 08', result: true, qatype: 0, delete_YN: false,
-            reply: '안녕하세요. 여의도점 ooo님 담당자 xxx입니다. 유리와 어닝프레임의 차이점을 문자로 안내드렸습니다! 많은 도움 되셨길 바랍니다. 감사합니다.'},
-            {id: 7, qid: 6, aid: 0, date: '2019. 04. 08', result: true, qatype: 1, delete_YN: false,
-            reply: '안녕하세요. 여의도점 ooo님 담당자 xxx입니다. 유리와 어닝프레임의 차이점을 문자로 안내드렸습니다! 많은 도움 되셨길 바랍니다. 감사합니다.'}
           ],
-          mode: '',
-          is_completion: ''
+          is_completion: '',
+          mode: true,
     },
     getters: {
         wList: state => state.wList,
         qList: state => state.qList,
         changeMode: state => state.mode,
-        is_completion: state => state.is_completion
+        changeResult: state => state.result,
+        changeModenResult: state => state.result && state.mode,
+        is_completion: state => state.is_completion,
+        pushData: state => state.pushData,
     },
     mutations: {
+        pushData(state, payload){
+            // console.log(payload.id)
+            // console.log(state.qList[payload.qid].ans_li)
+            // console.log(state.qList[payload.qid])
+            state.qList[payload.qid].ans_li = payload
+            
+        },
         changeMode(state, payload) {
+            // console.log(payload)
+            // console.log('mode')
             state.mode = payload
         },
+        changeResult(state, payload) {
+            // console.log('result')
+            state.result = payload
+        },
+        changeModenResult(state, payload) {
+            // console.log(payload,123)
+            // console.log(state.qList[payload.id].result)
+            state.qList[payload.id].result = payload.result
+            state.mode = payload.mode
+        },
         delete_YN(state, input) {
-            if(state.qList[input.id].qatype > 0){
-                // console.log(state.qList[input.id].qatype) qatype으로 질문리스트인지 답변리스트인지 구분 qid로 질문리스트와 연동
-                state.qList[state.qList[input.id].qid].result = false
-                state.qList[input.id].delete_YN = true
-            } else if(state.qList[input.id].qatype == 0) {
-                // console.log(state.qList[input.id].qatype) qatype으로 질문리스트인지 답변리스트인지 구분 aid로 답변리스트와 연동
-                state.qList[state.qList[input.id].aid].delete_YN = true
-                state.qList[input.id].result = false
-            }
+            state.qList[input.id].result = input.result
+            state.qList[input.id].ans_li.delete_YN = input.delete_YN
+            state.qList[input.id].ans_li.reply = input.reply
+            state.qList[input.id].reply = input.reply
         },
         is_completion(state, payload){
             state.is_completion = payload
         }
     },
     actions: {
-        test(context, params){
-            return new Promise((resolve,reject) => {
-                axios({
-                    method: 'get',
-                    params: params,
-                    url: api_url + 'test',
-                    responseType: 'json'
-                })
-                .then(function(res) {
-                    resolve(res.data)
-                })
-            })
-        }
+        // test(context, params){
+        //     return new Promise((resolve,reject) => {
+        //         axios({
+        //             method: 'get',
+        //             params: params,
+        //             url: api_url + 'test',
+        //             responseType: 'json'
+        //         })
+        //         .then(function(res) {
+        //             resolve(res.data)
+        //         })
+        //     })
+        // }
     }
 })
 

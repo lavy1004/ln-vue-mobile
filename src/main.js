@@ -17,6 +17,7 @@ Vue.use(lnui)
 Vue.mixin(CommonMethodMixin)
 
 var Datepicker = require('./components/Datepicker.vue')
+window._ = require('lodash');
 
 /* eslint-disable no-new */
 new Vue({

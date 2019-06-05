@@ -15,19 +15,19 @@
             <div class="inner fixed_pd white_bg">
                 <div>
                     <ul class="ulList type1" >
-                      <li v-show="item.delete_YN == false" class="pb90" v-for="(item, index) in qList" :key="index" :class="{ 'end-qna' : item.result }">
+                      <li v-for="(item, index) in qList" :key="index" >
                         <div v-if="!item.result && item.qatype == 0" class="cur" >
-                          <p v-if="item.qatype == 0">
+                          <p v-if="item.qatype == 0" class="que">
                             <span class="font_16 fw600" @click="goNext(item.id, item.result)">{{item.title}}</span>
                             <span class="fr font_12">{{item.date}}</span>
                           </p>
                         </div>
-                        <div v-else-if="item.result" class="cur" >
-                          <p v-if="item.qatype == 0">
+                        <div v-else-if="item.result" class="cur" :class="{ 'end-qna' : item.result }" >
+                          <p v-if="item.qatype == 0" class="que">
                             <span class="font_16 fw600" @click="goNext(item.id, item.result)">{{item.title}}</span>
                             <span class="fr font_12 lh25">{{item.date}}</span>
                           </p>
-                          <p v-if="item.qatype > 0" class="pl18">
+                          <p v-if="item.ans_li.qatype > 0 && item.ans_li.delete_YN == false" class="pl18 que">
                             <span><img src="@/assets/img/ico/ic-arrow.png" alt=""></span>
                             <span><img src="@/assets/img/ico/ic-reply.png" alt=""></span>
                             <span class="font_16 fw600 c-vertical" @click="goNext(item.id, item.result)">답변완료</span>

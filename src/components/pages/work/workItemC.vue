@@ -70,13 +70,13 @@
                 </div>
                 <p class="hr2"></p>
                 <div class="c-mobile">
-                    <p class="font_16 fw600">공정 전 사진</p>
+                    <p class="font_16 fw600 mb12 mt16">공정 전 사진</p>
                     <figure @click="showImg" class="inb mr8 img-wrap-lg" v-for="(item, index) in bfimgList" :key="index">
                         <img style="width:100%" src='@/assets/img/non.png'>
                     </figure>
                 </div>
                 <div class="c-mobile">
-                    <p class="font_16 fw600">공정 후 사진</p>
+                    <p class="font_16 fw600 mb12 mt16">공정 후 사진</p>
                     <figure @click="showImg" class="inb mr8 img-wrap-lg" v-for="(item, index) in afimgList" :key="index">
                         <img style="width:100%" src='@/assets/img/non.png'>
                     </figure>
