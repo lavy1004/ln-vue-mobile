@@ -18,9 +18,9 @@
                 <work-item :wList="wList" />
                 <work-item-b :wList="wList" />
                 <datepicker 
-                  orientation="landscape"
+                  :orientation="orientation"
                   lang="ko"
-                  disable-passed-days="true"></datepicker> 
+                  :disable-passed-days="passday"></datepicker> 
             </div>
             <div v-else class="inner fixed_pd height100">
                 <work-item-c :wList="wList" />
@@ -47,7 +47,8 @@ export default {
   },
   data () {
     return {
-      orientation: ''
+      orientation: 'landscape',
+      passday: true
     }
   },
   created() {

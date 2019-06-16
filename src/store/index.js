@@ -91,6 +91,22 @@ const store = new Vuex.Store({
                 {wax : '14,000', size: '68', neonsign: '300,000', freeze: '350,000', light: '720,000', tent: '50,000', total: '1,760,000' }
             ]
             },
+            {id: 10, title: '익스프레스 압구정점 작업요청', year: 2019, month: 2, day: 27, active: false, result: true, completion: true,
+            orderList : [
+                {order_time : '2019년 4월 29일 월요일', store_name: '압구정점 직영점', name: '하하', position: '스탭', mobile: '01012345678' }
+            ],
+            priceList : [
+                {wax : '14,000', size: '68', neonsign: '300,000', freeze: '350,000', light: '720,000', tent: '50,000', total: '1,760,000' }
+            ]
+            },
+            {id: 11, title: '익스프레스 청담점 작업요청', year: 2019, month: 2, day: 27, active: false, result: true, completion: true,
+            orderList : [
+                {order_time : '2019년 4월 29일 월요일', store_name: '청담점 직영점', name: '하하', position: '스탭', mobile: '01012345678' }
+            ],
+            priceList : [
+                {wax : '14,000', size: '68', neonsign: '300,000', freeze: '350,000', light: '720,000', tent: '50,000', total: '1,760,000' }
+            ]
+            },
           ],
           qList: [
             {

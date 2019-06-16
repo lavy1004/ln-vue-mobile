@@ -11,8 +11,8 @@
           <div class="cell">
             <div class="inner fixed_pd white_bg">
                 <div>
-                    <ul class="ulList type1" >
-                      <li v-for="(item, index) in wList" :key="index" :class="{ 'finish' : item.result }">
+                    <ul class="ulList type1 page"  >
+                      <li v-for="(item, index) in paginatedData"  :key="index" :class="{ 'finish' : item.result }">
                         <!-- Result가 false 라면 클릭안되는 리스트-->
                         <div v-if="item.result" class="work">
                           <p class="font_16 fw600 cur finish-p" :class="{ 'act' : item.active }" @click="goNext(item.id)">{{item.title}}</p>
@@ -61,7 +61,6 @@ export default {
 /*eslint-disable */
   data () {
     return {
-      rows: 100,
       perPage: 10,
       currentPage: 1,
     }
@@ -71,7 +70,16 @@ export default {
   computed: {
     wList () {
       return this.$store.getters.wList;
+    },
+    rows () {
+      return this.$store.getters.wList.length
+    },
+    paginatedData () {
+      const start = (this.currentPage-1) * this.perPage,
+            end = start + this.perPage;
+      return this.wList.slice(start, end);
     }
+
   },
   methods: {
     goNext (nextid) {
