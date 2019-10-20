@@ -5,6 +5,7 @@ import Main from '@/components/pages/main'
 
 import Work from '@/components/pages/work/work'
 import Qna from '@/components/pages/qna/qna'
+import Hidden from '@/components/pages/hidden/hidden'
 
 Vue.use(Router)
 
@@ -30,6 +31,14 @@ export default new Router({
         authorized: false
       },
       component: Main
+    },
+    {
+      path: '/hidden',
+      name: 'hidden',
+      meta: {
+        authorized: false
+      },
+      component: Hidden
     },
     {
       path: '/work',

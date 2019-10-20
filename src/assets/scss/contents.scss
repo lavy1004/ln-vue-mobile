@@ -56,6 +56,12 @@
         background-image: url(../img/ic-chat.png);
         background-repeat: no-repeat;
     }
+    
+    .type3{
+        background-color:map-get($bg_colors, BG_3);
+        background-image: url(../img/ic-chat.png);
+        background-repeat: no-repeat;
+    }
     .box + .box{
         margin-top:24px;
     }

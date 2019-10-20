@@ -19,6 +19,10 @@
                       <p class="h1-tit">문의사항</p>
                       <p class="detail-txt">자세히보기</p>
                     </div>
+                    <div class="box type3" @click="goNext('hidden')">
+                      <p class="h1-tit">동적테이블연습</p>
+                      <p class="detail-txt">자세히보기</p>
+                    </div>
                 </div>
             </div>
           </div>
